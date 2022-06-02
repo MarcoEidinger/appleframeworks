@@ -1,17 +1,19 @@
 {
-  "name": "appleframeworks",
-  "version": "1.0.0",
-  "description": "Website listing all public Apple frameworks and offering filtering capabilities",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Marco Eidinger",
-  "license": "MIT",
-  "dependencies": {
-    "bulma": "^0.9.4"
-  },
-  "devDependencies": {
-    "tablefilter": "^0.7.2"
-  }
+	"name": "appleframeworks",
+	"version": "1.0.0",
+	"description": "Website listing all public Apple frameworks and offering filtering capabilities",
+	"main": "index.html",
+	"homepage": ".",
+	"scripts": {
+		"deploy": "gh-pages -d ."
+	},
+	"author": "Marco Eidinger",
+	"license": "MIT",
+	"dependencies": {
+		"bulma": "^0.9.4",
+		"tablefilter": "^0.7.2"
+	},
+	"devDependencies": {
+		"gh-pages": "^4.0.0"
+	}
 }
