@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Website listing all public Apple frameworks and offering filtering capabilities",
 	"main": "index.html",
-    "homepage": "https://marcoeidinger.github.io/appleframeworks/",
+	"homepage": "https://marcoeidinger.github.io/appleframeworks/",
 	"scripts": {
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build"
