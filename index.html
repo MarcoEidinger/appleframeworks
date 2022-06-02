@@ -46,7 +46,7 @@
 			<div class="form-group field has-addons">
 				<p class="control">
 					<span class="select">
-						<select id="slcColumns" name="slcColumns" class="form-control">
+						<select id="slcColumns" name="slcColumns" class="form-control" onchange="filter();">
 							<option value="all">All frameworks</option>
 							<option value="ios">iOS frameworks >= 13</option>
 							<option value="ios-not-watch">iOS frameworks not available on watchOS</option>
@@ -55,13 +55,6 @@
 						</select>
 					</span>
 				</p>
-				<div class="control">
-					<button class="button is-link">Filter</button>
-				</div>
-				<div class="control">
-					<button class="button is-link is-light" onclick="clearFilterAndSelectOptions();">Clear</button>
-				</div>
-			</div>
 		</form>
 		<p class="content"></p>
 		<table class="frameworks">
@@ -2506,8 +2499,7 @@
 			dropDown.selectedIndex = 0;
 		}
 
-		// Form submission logic for filtering the table
-		function filter(evt) {
+		function filter() {
 			var frm = document.forms[0];
 			var slcCols = frm.slcColumns;
 			tf.clearFilters();
@@ -2517,7 +2509,7 @@
 			if (slcCols.value === "ios") {
 				tf.setFilterValue(1, '>= 13');
 			}
-			if (slcCols.value === "ios-not-watch2") {
+			if (slcCols.value === "ios-not-watch") {
 				tf.setFilterValue(1, '[nonempty]');
 				tf.setFilterValue(3, '[empty]');
 			}
@@ -2532,9 +2524,6 @@
 
 			// Filter the table
 			tf.filter();
-
-			// Prevent form submission
-			evt.preventDefault();
 		}
 
 		var filtersConfig = {
