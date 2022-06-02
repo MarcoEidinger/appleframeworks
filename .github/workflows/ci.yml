@@ -12,10 +12,9 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm ci
-#a          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          branch: gh-pages # The branch the action should deploy to.
+          branch: gh-pages
           folder: .

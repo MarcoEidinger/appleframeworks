@@ -13,7 +13,5 @@
 		"bulma": "^0.9.4",
 		"tablefilter": "^0.7.2"
 	},
-	"devDependencies": {
-		"gh-pages": "^4.0.0"
-	}
+	"devDependencies": {}
 }
