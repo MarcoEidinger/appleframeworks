@@ -36,14 +36,9 @@
 		content="View all public frameworks from Apple and filter based on platform and availability">
 	<meta name="twitter:image" content="">
 	<link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
-	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
 </head>
 
 <body>
-	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-		crossorigin="anonymous"></script> -->
 	<script src="node_modules/tablefilter/dist/tablefilter/tablefilter.js"></script>
 	<div class="container content p-4">
 		<h1 class="title pt-4">Public Apple Frameworks</h1>
@@ -107,8 +102,7 @@
 				</tr>
 				<tr>
 					<td>
-						<a href="https://developer.apple.com/documentation/accounts" target="_blank">Accounts <span
-								class="tag is-info"> Beta</span></a>
+						<a href="https://developer.apple.com/documentation/accounts" target="_blank">Accounts</a>
 					</td>
 					<td>5.0</td>
 					<td>10.8</td>
@@ -2489,7 +2483,7 @@
 
 	<footer class="footer">
 		<div class="content has-text-centered">
-<p>Last updated: June 2, 2022</p>
+			<p>Last updated: June 2, 2022</p>
 			<p>
 				Website created by <a href="https://www.eidinger.us/">Marco Eidinger</a>
 			</p>
@@ -2503,9 +2497,6 @@
 		function filter(evt) {
 			var frm = document.forms[0];
 			var slcCols = frm.slcColumns;
-			//var slcOperators = frm.slcOperators;
-			//var inp = frm.inpSearch;
-			//var query = frm.slcOperators.value + inp.value;
 			tf.clearFilters();
 			if (slcCols.value === "all") {
 				tf.clearFilters();
@@ -2548,14 +2539,6 @@
 				'string', 'string', 'string'
 			],
 			on_filters_loaded: function (o) {
-				// hide the filters row
-				// var gridLayout = o.feature('gridLayout');
-				// var headersTable = gridLayout.headTbl;
-				// headersTable.rows[o.getFiltersRowIndex()]
-				// 	.style.display = 'none';
-
-				// tf.setFilterValue(1, '[nonempty]');
-				// tf.setFilterValue(2, '[empty]');
 				tf.filter();
 			}
 		};
