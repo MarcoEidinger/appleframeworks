@@ -5,7 +5,6 @@
 	"main": "index.html",
 	"homepage": "https://marcoeidinger.github.io/appleframeworks/",
 	"scripts": {
-		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build"
 	},
 	"author": "Marco Eidinger",
