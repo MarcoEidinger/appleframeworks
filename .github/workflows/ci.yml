@@ -12,7 +12,7 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm ci
-          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+#a          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
