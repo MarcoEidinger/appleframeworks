@@ -12,10 +12,10 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm ci
-          npm run deploy
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: .
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
