@@ -59,7 +59,7 @@
 					<button class="button is-link">Filter</button>
 				</div>
 				<div class="control">
-					<button class="button is-link is-light">Clear</button>
+					<button class="button is-link is-light" onclick="clearFilterAndSelectOptions();">Clear</button>
 				</div>
 			</div>
 		</form>
@@ -2492,6 +2492,19 @@
 
 
 	<script data-config>
+
+		function removeOptions(selectElement) {
+			var i, L = selectElement.options.length - 1;
+			for (i = L; i >= 0; i--) {
+				selectElement.remove(i);
+			}
+		}
+
+		function clearFilterAndSelectOptions() {
+			tf.clearFilters();
+			var dropDown = document.getElementById("slcColumns");
+			dropDown.selectedIndex = 0;
+		}
 
 		// Form submission logic for filtering the table
 		function filter(evt) {
