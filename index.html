@@ -48,10 +48,13 @@
 					<span class="select">
 						<select id="slcColumns" name="slcColumns" class="form-control" onchange="filter();">
 							<option value="all">All frameworks</option>
-							<option value="ios">iOS frameworks >= 13</option>
-							<option value="ios-not-watch">iOS frameworks not available on watchOS</option>
-							<option value="mac">macOS frameworks </option>
-							<option value="mac-not-ios">macOS frameworks not available on iOS </option>
+                            <option value="ios">iOS</option>
+							<option value="ios13+">iOS 13.0+</option>
+							<option value="ios-not-watch">iOS && !watchOS</option>
+							<option value="mac">macOS</option>
+							<option value="mac-not-ios">macOS && !iOS </option>
+							<option value="watchos">watchOS</option>
+							<option value="tvos">tvOS</option>
 						</select>
 					</span>
 				</p>
@@ -2507,7 +2510,10 @@
 			if (slcCols.value === "all") {
 				tf.clearFilters();
 			}
-			if (slcCols.value === "ios") {
+			if (slcCols.value === "ios+") {
+				tf.setFilterValue(1, '[nonempty]');
+			}
+			if (slcCols.value === "ios13+") {
 				tf.setFilterValue(1, '>= 13');
 			}
 			if (slcCols.value === "ios-not-watch") {
@@ -2521,7 +2527,12 @@
 				tf.setFilterValue(1, '[empty]');
 				tf.setFilterValue(2, '[nonempty]');
 			}
-
+			if (slcCols.value === "watchos") {
+				tf.setFilterValue(3, '[nonempty]');
+			}
+			if (slcCols.value === "tvos") {
+				tf.setFilterValue(4, '[nonempty]');
+			}
 
 			// Filter the table
 			tf.filter();
