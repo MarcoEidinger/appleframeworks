@@ -42,13 +42,17 @@
 	<script src="node_modules/tablefilter/dist/tablefilter/tablefilter.js"></script>
 	<div class="container content p-4">
 		<h1 class="title pt-4">Public Apple Frameworks</h1>
+		<p>View all public frameworks provided by Apple and check their platform availability. Use the built-in filters
+			or perform advanced searches from text-box filters with these <a
+				href="https://github.com/koalyptus/TableFilter/wiki/4.-Filter-operators" target="_blank">operators</a>.
+		</p>
 		<form class="navbar-form navbar-left" onsubmit="filter(event);">
 			<div class="form-group field has-addons">
 				<p class="control">
 					<span class="select">
 						<select id="slcColumns" name="slcColumns" class="form-control" onchange="filter();">
 							<option value="all">All frameworks</option>
-                            <option value="ios">iOS</option>
+							<option value="ios">iOS</option>
 							<option value="ios13+">iOS 13.0+</option>
 							<option value="ios-not-watch">iOS && !watchOS</option>
 							<option value="mac">macOS</option>
@@ -58,6 +62,9 @@
 						</select>
 					</span>
 				</p>
+				<div class="control">
+					<button class="button is-link is-light" onclick="clearFilterAndSelectOptions();">Clear</button>
+				</div>
 			</div>
 		</form>
 		<p class="content"></p>
@@ -76,19 +83,8 @@
 			<tbody>
 				<tr>
 					<td>
-						<a href="https://developer.apple.com/documentation/accelerate" target="_blank">Accelerate</a>
-					</td>
-					<td>4.0</td>
-					<td>10.3</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>4.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/accessibility" target="_blank"
-							data-tooltip="Tooltip Text">Accessibility</a>
+						<a href="https://developer.apple.com/documentation/accessibility"
+							target="_blank">Accessibility</a>
 					</td>
 					<td>14.0</td>
 					<td>11.0</td>
@@ -201,8 +197,7 @@
 				<tr>
 					<td>
 						<a href="https://developer.apple.com/documentation/applicationservices"
-							target="_blank">Application
-							Services</a>
+							target="_blank">Application Services</a>
 					</td>
 					<td></td>
 					<td>10.0</td>
@@ -843,18 +838,6 @@
 				</tr>
 				<tr>
 					<td>
-						<a href="https://developer.apple.com/documentation/devicemanagement" target="_blank">Device
-							Management</a>
-					</td>
-					<td>13.0</td>
-					<td>10.15</td>
-					<td>6.0</td>
-					<td>13.0</td>
-					<td></td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
 						<a href="https://developer.apple.com/documentation/diskarbitration" target="_blank">Disk
 							Arbitration</a>
 					</td>
@@ -959,8 +942,7 @@
 				<tr>
 					<td>
 						<a href="https://developer.apple.com/documentation/exposurenotification"
-							target="_blank">Exposure
-							Notification</a>
+							target="_blank">Exposure Notification</a>
 					</td>
 					<td>13.5</td>
 					<td>12.0</td>
@@ -1129,17 +1111,6 @@
 					<td></td>
 					<td>13.0</td>
 					<td>5.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/healthkit" target="_blank">HealthKit</a>
-					</td>
-					<td>8.0</td>
-					<td></td>
-					<td>2.0</td>
-					<td></td>
-					<td>13.0</td>
-					<td>8.0</td>
 				</tr>
 				<tr>
 					<td>
@@ -1487,8 +1458,7 @@
 				<tr>
 					<td>
 						<a href="https://developer.apple.com/documentation/metalperformanceshaders"
-							target="_blank">Metal
-							Performance Shaders</a>
+							target="_blank">Metal Performance Shaders</a>
 					</td>
 					<td>9.0</td>
 					<td>10.13</td>
@@ -1545,8 +1515,7 @@
 				<tr>
 					<td>
 						<a href="https://developer.apple.com/documentation/multipeerconnectivity"
-							target="_blank">Multipeer
-							Connectivity</a>
+							target="_blank">Multipeer Connectivity</a>
 					</td>
 					<td>7.0</td>
 					<td>10.10</td>
@@ -1628,8 +1597,7 @@
 				<tr>
 					<td>
 						<a href="https://developer.apple.com/documentation/notificationcenter"
-							target="_blank">Notification
-							Center</a>
+							target="_blank">Notification Center</a>
 					</td>
 					<td>8.0</td>
 					<td>10.10</td>
@@ -1710,8 +1678,7 @@
 				<tr>
 					<td>
 						<a href="https://developer.apple.com/documentation/passkit" target="_blank">PassKit (Apple Pay
-							and
-							Wallet)</a>
+							and Wallet)</a>
 					</td>
 					<td>6.0</td>
 					<td>11.0</td>
@@ -1764,17 +1731,6 @@
 					<td>15.0</td>
 					<td>15.0</td>
 					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/photokit" target="_blank">PhotoKit</a>
-					</td>
-					<td>8.0</td>
-					<td>10.11</td>
-					<td></td>
-					<td>10.0</td>
-					<td>13.0</td>
-					<td>8.0</td>
 				</tr>
 				<tr>
 					<td>
@@ -1860,8 +1816,7 @@
 				<tr>
 					<td>
 						<a href="https://developer.apple.com/documentation/quicklookthumbnailing"
-							target="_blank">QuickLook
-							Thumbnailing</a>
+							target="_blank">QuickLook Thumbnailing</a>
 					</td>
 					<td>13.0</td>
 					<td>10.15</td>
@@ -2040,30 +1995,6 @@
 					<td>15.0</td>
 					<td>15.0</td>
 					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/sirikit" target="_blank">SiriKit</a>
-					</td>
-					<td>10.0</td>
-					<td>12.0</td>
-					<td>3.2</td>
-					<td>14.0</td>
-					<td>13.0</td>
-					<td>10.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/sms_and_call_reporting" target="_blank">SMS
-							and
-							Call Reporting</a>
-					</td>
-					<td>11.0</td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>11.0</td>
 				</tr>
 				<tr>
 					<td>
@@ -2271,8 +2202,7 @@
 				<tr>
 					<td>
 						<a href="https://developer.apple.com/documentation/uniformtypeidentifiers"
-							target="_blank">Uniform
-							Type Identifiers</a>
+							target="_blank">Uniform Type Identifiers</a>
 					</td>
 					<td>14.0</td>
 					<td>11.0</td>
@@ -2376,18 +2306,6 @@
 				</tr>
 				<tr>
 					<td>
-						<a href="https://developer.apple.com/documentation/walletpasses" target="_blank">Wallet
-							Passes</a>
-					</td>
-					<td>6.0</td>
-					<td></td>
-					<td>2.0</td>
-					<td></td>
-					<td></td>
-					<td>6.0</td>
-				</tr>
-				<tr>
-					<td>
 						<a href="https://developer.apple.com/documentation/watchconnectivity" target="_blank">Watch
 							Connectivity</a>
 					</td>
@@ -2484,6 +2402,9 @@
 			<p>
 				Website created by <a href="https://www.eidinger.us/">Marco Eidinger</a>
 			</p>
+			<p>
+				Using <a href="http://mguglielmi.free.fr/">TableFilter</a> created by <a href="http://mguglielmi.free.fr/">Max Guglielmi</a>
+			</p>
 		</div>
 	</footer>
 
@@ -2503,7 +2424,7 @@
 			dropDown.selectedIndex = 0;
 		}
 
-		function filter() {
+		function filter(evt) {
 			var frm = document.forms[0];
 			var slcCols = frm.slcColumns;
 			tf.clearFilters();
@@ -2532,10 +2453,12 @@
 			}
 			if (slcCols.value === "tvos") {
 				tf.setFilterValue(4, '[nonempty]');
+
 			}
 
-			// Filter the table
 			tf.filter();
+
+			evt.preventDefault();
 		}
 
 		var filtersConfig = {
@@ -2548,7 +2471,6 @@
 			alternate_rows: true,
 			rows_counter: true,
 			status_bar: true,
-			btn_reset: true,
 			col_types: [
 				'string', 'string', 'string',
 				'string', 'string', 'string'
@@ -2562,6 +2484,5 @@
 		tf.init();
 	</script>
 </body>
-
 
 </html>
