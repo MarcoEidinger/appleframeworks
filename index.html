@@ -2403,7 +2403,8 @@
 				Website created by <a href="https://www.eidinger.us/">Marco Eidinger</a>
 			</p>
 			<p>
-				Using <a href="http://mguglielmi.free.fr/">TableFilter</a> created by <a href="http://mguglielmi.free.fr/">Max Guglielmi</a>
+				Using <a href="http://mguglielmi.free.fr/">TableFilter</a> created by <a
+					href="http://mguglielmi.free.fr/">Max Guglielmi</a>
 			</p>
 		</div>
 	</footer>
@@ -2464,7 +2465,7 @@
 		var filtersConfig = {
 			// instruct TableFilter location to import ressources from
 			base_path: 'https://unpkg.com/tablefilter@latest/dist/tablefilter/',
-			responsive: true,
+			sticky_headers: true, // does not work with responsive: true,
 			auto_filter: {
 				delay: 500 //milliseconds
 			},
@@ -2483,6 +2484,15 @@
 		var tf = new TableFilter(document.querySelector('.frameworks'), filtersConfig);
 		tf.init();
 	</script>
+
+	<style>
+		/** sticky table header */
+		.TF.sticky th {
+			top: 0px !important;
+			/* important for Safari */
+			text-align: left !important;
+		}
+	</style>
 </body>
 
 </html>
