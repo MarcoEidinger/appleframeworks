@@ -52,6 +52,7 @@
                     <span class="select">
                         <select id="slcColumns" name="slcColumns" class="form-control" onchange="filter();">
                             <option value="all">All frameworks</option>
+							<option value="beta">All Beta frameworks</option>
                             <option value="ios">iOS</option>
                             <option value="ios13+">iOS 13.0+</option>
                             <option value="ios-not-watch">iOS && !watchOS</option>
@@ -2734,6 +2735,9 @@
             if (slcCols.value === "all") {
                 tf.clearFilters();
             }
+            if (slcCols.value === "beta") {
+                tf.setFilterValue(0, 'Beta');
+            }
             if (slcCols.value === "ios") {
                 tf.setFilterValue(1, '[nonempty]');
             }
@@ -2756,7 +2760,6 @@
             }
             if (slcCols.value === "tvos") {
                 tf.setFilterValue(4, '[nonempty]');
-
             }
 
             tf.filter();
