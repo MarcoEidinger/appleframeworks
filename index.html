@@ -2,2553 +2,2799 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- HTML Meta Tags -->
-	<title>Public Apple Frameworks</title>
-	<meta name="description"
-		content="View all public frameworks from Apple and filter based on platform and availability">
-	<meta name="keywords"
-		content="Apple, Frameworks, Technologies, List, Table, Availability, Minimum Platform Version">
-	<meta name="robots" content="index, follow">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="language" content="English">
-	<meta name="author" content="Marco Eidinger">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- HTML Meta Tags -->
+    <title>Public Apple Frameworks</title>
+    <meta name="description"
+        content="View all public frameworks from Apple and filter based on platform and availability">
+    <meta name="keywords"
+        content="Apple, Frameworks, Technologies, List, Table, Availability, Minimum Platform Version">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="Marco Eidinger">
 
-	<!-- Google / Search Engine Tags -->
-	<meta itemprop="name" content="Public Apple Frameworks">
-	<meta itemprop="description"
-		content="View all public frameworks from Apple and filter based on platform and availability">
-	<meta itemprop="image" content="">
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Public Apple Frameworks">
+    <meta itemprop="description"
+        content="View all public frameworks from Apple and filter based on platform and availability">
+    <meta itemprop="image" content="">
 
-	<!-- Facebook Meta Tags -->
-	<meta property="og:url" content="https://marcoeidinger.github.io/appleframeworks">
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Public Apple Frameworks">
-	<meta property="og:description"
-		content="View all public frameworks from Apple and filter based on platform and availability">
-	<meta property="og:image" content="">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://marcoeidinger.github.io/appleframeworks">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Public Apple Frameworks">
+    <meta property="og:description"
+        content="View all public frameworks from Apple and filter based on platform and availability">
+    <meta property="og:image" content="">
 
-	<!-- Twitter Meta Tags -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Public Apple Frameworks">
-	<meta name="twitter:description"
-		content="View all public frameworks from Apple and filter based on platform and availability">
-	<meta name="twitter:image" content="">
-	<link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Public Apple Frameworks">
+    <meta name="twitter:description"
+        content="View all public frameworks from Apple and filter based on platform and availability">
+    <meta name="twitter:image" content="">
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
 </head>
 
 <body>
-	<script src="node_modules/tablefilter/dist/tablefilter/tablefilter.js"></script>
-	<div class="container content p-4">
-		<h1 class="title pt-4">Public Apple Frameworks</h1>
-		<p>View all public frameworks provided by Apple and check their platform availability. Use the built-in filters
-			or perform advanced searches from text-box filters with these <a
-				href="https://github.com/koalyptus/TableFilter/wiki/4.-Filter-operators" target="_blank">operators</a>.
-		</p>
-		<form class="navbar-form navbar-left" onsubmit="filter(event);">
-			<div class="form-group field has-addons">
-				<p class="control">
-					<span class="select">
-						<select id="slcColumns" name="slcColumns" class="form-control" onchange="filter();">
-							<option value="all">All frameworks</option>
-							<option value="ios">iOS</option>
-							<option value="ios13+">iOS 13.0+</option>
-							<option value="ios-not-watch">iOS && !watchOS</option>
-							<option value="mac">macOS</option>
-							<option value="mac-not-ios">macOS && !iOS </option>
-							<option value="watchos">watchOS</option>
-							<option value="tvos">tvOS</option>
-						</select>
-					</span>
-				</p>
-				<div class="control">
-					<button class="button is-link is-light" onclick="clearFilterAndSelectOptions();">Clear</button>
-				</div>
-			</div>
-		</form>
-		<p class="content"></p>
-		<table class="frameworks">
-			<thead>
-				<tr>
-					<th>Framework</th>
-					<th>iOS</th>
-					<th>macOS</th>
-					<th>watchOS</th>
-					<th>tvOS</th>
-					<th>macCatalyst</th>
-					<th>iPadOS</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/accelerate" target="_blank">Accelerate</a>
-					</td>
-					<td>4.0</td>
-					<td>10.3</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>4.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/accessibility"
-							target="_blank">Accessibility</a>
-					</td>
-					<td>14.0</td>
-					<td>11.0</td>
-					<td>7.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/accounts" target="_blank">Accounts</a>
-					</td>
-					<td>5.0</td>
-					<td>10.8</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>5.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/ad_services" target="_blank">AdServices</a>
-					</td>
-					<td>14.3</td>
-					<td>11.1</td>
-					<td></td>
-					<td></td>
-					<td>14.3</td>
-					<td>14.3</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/addressbook" target="_blank">Address Book</a>
-					</td>
-					<td>2.0</td>
-					<td>10.2</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/addressbookui" target="_blank">Address Book
-							UI</a>
-					</td>
-					<td>2.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/adsupport" target="_blank">AdSupport</a>
-					</td>
-					<td>6.0</td>
-					<td>10.14</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>6.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/agl" target="_blank">AGL</a>
-					</td>
-					<td></td>
-					<td>10.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/app_clips" target="_blank">App Clips</a>
-					</td>
-					<td>14.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/appkit" target="_blank">AppKit</a>
-					</td>
-					<td></td>
-					<td>10.0</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/applearchive" target="_blank">Apple
-							Archive</a>
-					</td>
-					<td>14.0</td>
-					<td>11.0</td>
-					<td>7.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/applicationservices"
-							target="_blank">Application Services</a>
-					</td>
-					<td></td>
-					<td>10.0</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/apptrackingtransparency" target="_blank">App
-							Tracking Transparency</a>
-					</td>
-					<td>14.0</td>
-					<td>11.0</td>
-					<td></td>
-					<td>14.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/arkit" target="_blank">ARKit</a>
-					</td>
-					<td>11.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>11.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/assetslibrary" target="_blank">Assets
-							Library</a>
-					</td>
-					<td>4.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>4.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/audiotoolbox" target="_blank">Audio
-							Toolbox</a>
-					</td>
-					<td>2.0</td>
-					<td>10.0</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/audiounit" target="_blank">Audio Unit</a>
-					</td>
-					<td>2.0</td>
-					<td>10.0</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/authenticationservices"
-							target="_blank">Authentication Services</a>
-					</td>
-					<td>12.0</td>
-					<td>10.15</td>
-					<td>6.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-					<td>12.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/automaticassessmentconfiguration"
-							target="_blank">Automatic Assessment Configuration</a>
-					</td>
-					<td>13.4</td>
-					<td>10.15.4</td>
-					<td></td>
-					<td></td>
-					<td>13.4</td>
-					<td>13.4</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/automator" target="_blank">Automator</a>
-					</td>
-					<td></td>
-					<td>10.4</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/avfaudio" target="_blank">AVFAudio</a>
-					</td>
-					<td>14.5</td>
-					<td>11.3</td>
-					<td>7.4</td>
-					<td>14.5</td>
-					<td>14.5</td>
-					<td>14.5</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/avfoundation"
-							target="_blank">AVFoundation</a>
-					</td>
-					<td>2.2</td>
-					<td>10.7</td>
-					<td>3.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.2</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/avkit" target="_blank">AVKit</a>
-					</td>
-					<td>8.0</td>
-					<td>10.9</td>
-					<td>8.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/backgroundtasks" target="_blank">Background
-							Tasks</a>
-					</td>
-					<td>13.0</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/bundleresources" target="_blank">Bundle
-							Resources</a>
-					</td>
-					<td>13.0</td>
-					<td>10.15</td>
-					<td>6.0</td>
-					<td>13.0</td>
-					<td></td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/callkit" target="_blank">CallKit</a>
-					</td>
-					<td>10.0</td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>10.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/carplay" target="_blank">CarPlay</a>
-					</td>
-					<td>12.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>12.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/cfnetwork" target="_blank">CFNetwork</a>
-					</td>
-					<td>2.0</td>
-					<td>10.8</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/classkit" target="_blank">ClassKit</a>
-					</td>
-					<td>11.4</td>
-					<td>11.0</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>11.4</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/clockkit" target="_blank">ClockKit</a>
-					</td>
-					<td>14.0</td>
-					<td></td>
-					<td>2.0</td>
-					<td></td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/cloudkit" target="_blank">CloudKit</a>
-					</td>
-					<td>8.0</td>
-					<td>10.10</td>
-					<td>3.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/collaboration"
-							target="_blank">Collaboration</a>
-					</td>
-					<td></td>
-					<td>10.5</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/colorsync" target="_blank">ColorSync</a>
-					</td>
-					<td></td>
-					<td>10.13</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/Combine" target="_blank">Combine</a>
-					</td>
-					<td>13.0</td>
-					<td>10.15</td>
-					<td>6.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/compression" target="_blank">Compression</a>
-					</td>
-					<td>9.0</td>
-					<td>10.11</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>9.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/contacts" target="_blank">Contacts</a>
-					</td>
-					<td>9.0</td>
-					<td>10.11</td>
-					<td>2.0</td>
-					<td></td>
-					<td>13.0</td>
-					<td>9.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/contactsui" target="_blank">Contacts UI</a>
-					</td>
-					<td>9.0</td>
-					<td>10.11</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>9.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coreaudio" target="_blank">Core Audio</a>
-					</td>
-					<td>2.0</td>
-					<td>10.0</td>
-					<td>3.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coreaudiokit" target="_blank">Core Audio
-							Kit</a>
-					</td>
-					<td>8.0</td>
-					<td>10.4</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coreaudiotypes" target="_blank">Core Audio
-							Types</a>
-					</td>
-					<td>13.0</td>
-					<td>10.15</td>
-					<td>6.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/corebluetooth" target="_blank">Core
-							Bluetooth</a>
-					</td>
-					<td>5.0</td>
-					<td>10.10</td>
-					<td>4.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>5.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coredata" target="_blank">Core Data</a>
-					</td>
-					<td>3.0</td>
-					<td>10.4</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>3.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/corefoundation" target="_blank">Core
-							Foundation</a>
-					</td>
-					<td>2.0</td>
-					<td>10.0</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coregraphics" target="_blank">Core
-							Graphics</a>
-					</td>
-					<td>2.0</td>
-					<td>10.8</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/corehaptics" target="_blank">Core Haptics</a>
-					</td>
-					<td>13.0</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coreimage" target="_blank">Core Image</a>
-					</td>
-					<td>5.0</td>
-					<td>10.11</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>5.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/corelocation" target="_blank">Core
-							Location</a>
-					</td>
-					<td>2.0</td>
-					<td>10.6</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/corelocationui"
-							target="_blank">CoreLocationUI</a>
-					</td>
-					<td>15.0</td>
-					<td></td>
-					<td>8.0</td>
-					<td></td>
-					<td>15.0</td>
-					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coremedia" target="_blank">Core Media</a>
-					</td>
-					<td>4.0</td>
-					<td>10.7</td>
-					<td>6.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>4.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coremediaio" target="_blank">Core Media
-							I/O</a>
-					</td>
-					<td></td>
-					<td>10.7</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coremidi" target="_blank">Core MIDI</a>
-					</td>
-					<td>4.2</td>
-					<td>10.0</td>
-					<td>8.0</td>
-					<td>15.0</td>
-					<td>13.0</td>
-					<td>4.2</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coreml" target="_blank">Core ML</a>
-					</td>
-					<td>11.0</td>
-					<td>10.13</td>
-					<td>4.0</td>
-					<td>11.0</td>
-					<td>13.0</td>
-					<td>11.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coremotion" target="_blank">Core Motion</a>
-					</td>
-					<td>4.0</td>
-					<td>10.15</td>
-					<td>2.0</td>
-					<td></td>
-					<td>13.0</td>
-					<td>4.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/corenfc" target="_blank">Core NFC</a>
-					</td>
-					<td>11.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>11.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coreservices" target="_blank">Core
-							Services</a>
-					</td>
-					<td>12.0</td>
-					<td>10.0</td>
-					<td>5.0</td>
-					<td>12.0</td>
-					<td>13.0</td>
-					<td>12.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/corespotlight" target="_blank">Core
-							Spotlight</a>
-					</td>
-					<td>9.0</td>
-					<td>10.13</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>9.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coretelephony" target="_blank">Core
-							Telephony</a>
-					</td>
-					<td>4.0</td>
-					<td>10.10</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>4.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/coretext" target="_blank">Core Text</a>
-					</td>
-					<td>3.2</td>
-					<td>10.8</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>3.2</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/corevideo" target="_blank">Core Video</a>
-					</td>
-					<td>4.0</td>
-					<td>10.4</td>
-					<td>4.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>4.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/corewlan" target="_blank">Core WLAN</a>
-					</td>
-					<td></td>
-					<td>10.6</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/createml" target="_blank">Create ML</a>
-					</td>
-					<td>15.0</td>
-					<td>10.14</td>
-					<td></td>
-					<td></td>
-					<td>15.0</td>
-					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/cryptokit" target="_blank">Apple
-							CryptoKit</a>
-					</td>
-					<td>13.0</td>
-					<td>10.15</td>
-					<td>8.0</td>
-					<td>15.0</td>
-					<td>15.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/cryptotokenkit"
-							target="_blank">CryptoTokenKit</a>
-					</td>
-					<td>13.0</td>
-					<td>10.10</td>
-					<td>8.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/darwinnotify" target="_blank">Darwin
-							Notify</a>
-					</td>
-					<td>9.3</td>
-					<td>10.14</td>
-					<td>2.2</td>
-					<td>9.2</td>
-					<td>13.0</td>
-					<td>9.3</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/DeveloperToolsSupport"
-							target="_blank">DeveloperToolsSupport</a>
-					</td>
-					<td>14.0</td>
-					<td>11.0</td>
-					<td>7.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/DeviceActivity"
-							target="_blank">DeviceActivity</a>
-					</td>
-					<td>15.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>15.0</td>
-					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/devicecheck" target="_blank">DeviceCheck</a>
-					</td>
-					<td>11.0</td>
-					<td>10.15</td>
-					<td></td>
-					<td>11.0</td>
-					<td>13.0</td>
-					<td>11.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/diskarbitration" target="_blank">Disk
-							Arbitration</a>
-					</td>
-					<td></td>
-					<td>10.4</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/dispatch" target="_blank">Dispatch</a>
-					</td>
-					<td>8.0</td>
-					<td>10.10</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/dnssd" target="_blank">dnssd</a>
-					</td>
-					<td>10.0</td>
-					<td>10.12</td>
-					<td>3.0</td>
-					<td>10.0</td>
-					<td>13.0</td>
-					<td>10.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/driverkit" target="_blank">DriverKit</a>
-					</td>
-					<td></td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/endpointsecurity" target="_blank">Endpoint
-							Security</a>
-					</td>
-					<td></td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/eventkit" target="_blank">EventKit</a>
-					</td>
-					<td>4.0</td>
-					<td>10.8</td>
-					<td>2.0</td>
-					<td></td>
-					<td>13.0</td>
-					<td>4.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/eventkitui" target="_blank">EventKit UI</a>
-					</td>
-					<td>4.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>4.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/exceptionhandling" target="_blank">Exception
-							Handling</a>
-					</td>
-					<td></td>
-					<td>10.0</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/executionpolicy" target="_blank">Execution
-							Policy</a>
-					</td>
-					<td></td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/exposurenotification"
-							target="_blank">Exposure Notification</a>
-					</td>
-					<td>13.5</td>
-					<td>12.0</td>
-					<td></td>
-					<td></td>
-					<td>15.0</td>
-					<td>13.5</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/externalaccessory" target="_blank">External
-							Accessory</a>
-					</td>
-					<td>3.0</td>
-					<td>10.13</td>
-					<td></td>
-					<td>10.0</td>
-					<td>13.0</td>
-					<td>3.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/FamilyControls"
-							target="_blank">FamilyControls</a>
-					</td>
-					<td>15.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>15.0</td>
-					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/fileprovider" target="_blank">File
-							Provider</a>
-					</td>
-					<td>11.0</td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>11.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/fileproviderui" target="_blank">File Provider
-							UI</a>
-					</td>
-					<td>11.0</td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td>15.0</td>
-					<td>11.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/findersync" target="_blank">Finder Sync</a>
-					</td>
-					<td></td>
-					<td>10.10</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/forcefeedback" target="_blank">Force
-							Feedback</a>
-					</td>
-					<td></td>
-					<td>10.2</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/foundation" target="_blank">Foundation</a>
-					</td>
-					<td>2.0</td>
-					<td>10.0</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/fwauserlib" target="_blank">FWAUserLib</a>
-					</td>
-					<td></td>
-					<td>10.2</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/gamecontroller" target="_blank">Game
-							Controller</a>
-					</td>
-					<td>7.0</td>
-					<td>10.9</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>7.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/gamekit" target="_blank">GameKit</a>
-					</td>
-					<td>3.0</td>
-					<td>10.8</td>
-					<td>3.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>3.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/gameplaykit" target="_blank">GameplayKit</a>
-					</td>
-					<td>9.0</td>
-					<td>10.11</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>9.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/glkit" target="_blank">GLKit</a>
-					</td>
-					<td>5.0</td>
-					<td>10.8</td>
-					<td></td>
-					<td>9.0</td>
-					<td></td>
-					<td>5.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/GroupActivities"
-							target="_blank">GroupActivities</a>
-					</td>
-					<td>15.0</td>
-					<td>12.0</td>
-					<td></td>
-					<td>15.0</td>
-					<td>15.0</td>
-					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/gss" target="_blank">GSS</a>
-					</td>
-					<td>5.0</td>
-					<td>10.14</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>5.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/healthkit" target="_blank">HealthKit</a>
-					</td>
-					<td>8.0</td>
-					<td></td>
-					<td>2.0</td>
-					<td></td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/hiddriverkit"
-							target="_blank">HIDDriverKit</a>
-					</td>
-					<td></td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/homekit" target="_blank">HomeKit</a>
-					</td>
-					<td>8.0</td>
-					<td></td>
-					<td>2.0</td>
-					<td>10.0</td>
-					<td>14.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/hypervisor" target="_blank">Hypervisor</a>
-					</td>
-					<td></td>
-					<td>10.10</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/iad" target="_blank">iAd</a>
-					</td>
-					<td>4.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>4.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/imagecapturecore"
-							target="_blank">ImageCaptureCore</a>
-					</td>
-					<td>13.0</td>
-					<td>10.6</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/imageio" target="_blank">Image I/O</a>
-					</td>
-					<td>4.0</td>
-					<td>10.8</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>4.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/inputmethodkit"
-							target="_blank">InputMethodKit</a>
-					</td>
-					<td></td>
-					<td>10.5</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/iobluetooth" target="_blank">IOBluetooth</a>
-					</td>
-					<td></td>
-					<td>10.2</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/iobluetoothui" target="_blank">IOBluetooth
-							UI</a>
-					</td>
-					<td></td>
-					<td>10.2</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/iokit" target="_blank">IOKit</a>
-					</td>
-					<td></td>
-					<td>10.0</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/iosurface" target="_blank">IOSurface</a>
-					</td>
-					<td>11.0</td>
-					<td>10.6</td>
-					<td></td>
-					<td>11.0</td>
-					<td>13.0</td>
-					<td>11.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/iousbhost" target="_blank">IOUSBHost</a>
-					</td>
-					<td></td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/ituneslibrary" target="_blank">iTunes
-							Library</a>
-					</td>
-					<td></td>
-					<td>10.13</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/javascriptcore"
-							target="_blank">JavaScriptCore</a>
-					</td>
-					<td>7.0</td>
-					<td>10.5</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>7.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/kernel" target="_blank">Kernel</a>
-					</td>
-					<td></td>
-					<td>10.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/kernelmanagement" target="_blank">Kernel
-							Management</a>
-					</td>
-					<td></td>
-					<td>11.0</td>
-					<td></td>
-					<td></td>
-					<td>14.2</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/latentsemanticmapping" target="_blank">Latent
-							Semantic Mapping</a>
-					</td>
-					<td></td>
-					<td>10.5</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/linkpresentation" target="_blank">Link
-							Presentation</a>
-					</td>
-					<td>13.0</td>
-					<td>10.15</td>
-					<td></td>
-					<td>14.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/localauthentication" target="_blank">Local
-							Authentication</a>
-					</td>
-					<td>8.0</td>
-					<td>10.10</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/localauthenticationembeddedui"
-							target="_blank">Local Authentication Embedded UI</a>
-					</td>
-					<td></td>
-					<td>12.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/mailkit" target="_blank">MailKit</a>
-					</td>
-					<td></td>
-					<td>12.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/mapkit" target="_blank">MapKit</a>
-					</td>
-					<td>3.0</td>
-					<td>10.9</td>
-					<td>2.0</td>
-					<td>9.2</td>
-					<td>13.0</td>
-					<td>3.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/mediaaccessibility" target="_blank">Media
-							Accessibility</a>
-					</td>
-					<td>7.0</td>
-					<td>10.9</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>7.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/medialibrary" target="_blank">Media
-							Library</a>
-					</td>
-					<td></td>
-					<td>10.9</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/mediaplayer" target="_blank">Media Player</a>
-					</td>
-					<td>2.0</td>
-					<td>10.12.1</td>
-					<td>5.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/mediasetup" target="_blank">Media Setup</a>
-					</td>
-					<td>14.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>15.4</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/messages" target="_blank">Messages</a>
-					</td>
-					<td>10.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>10.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/messageui" target="_blank">Message UI</a>
-					</td>
-					<td>3.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>3.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/metal" target="_blank">Metal</a>
-					</td>
-					<td>8.0</td>
-					<td>10.11</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/metalkit" target="_blank">MetalKit</a>
-					</td>
-					<td>9.0</td>
-					<td>10.11</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>9.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/metalperformanceshaders"
-							target="_blank">Metal Performance Shaders</a>
-					</td>
-					<td>9.0</td>
-					<td>10.13</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>9.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/metalperformanceshadersgraph"
-							target="_blank">Metal Performance Shaders Graph</a>
-					</td>
-					<td>14.0</td>
-					<td>11.0</td>
-					<td></td>
-					<td>14.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/metrickit" target="_blank">MetricKit</a>
-					</td>
-					<td>13.0</td>
-					<td>12.0</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/mlcompute" target="_blank">ML Compute</a>
-					</td>
-					<td>14.0</td>
-					<td>11.0</td>
-					<td></td>
-					<td>14.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/modelio" target="_blank">Model I/O</a>
-					</td>
-					<td>9.0</td>
-					<td>10.11</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>9.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/multipeerconnectivity"
-							target="_blank">Multipeer Connectivity</a>
-					</td>
-					<td>7.0</td>
-					<td>10.10</td>
-					<td></td>
-					<td>10.0</td>
-					<td>13.0</td>
-					<td>7.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/MusicKit" target="_blank">MusicKit</a>
-					</td>
-					<td>15.0</td>
-					<td>12.0</td>
-					<td>8.0</td>
-					<td>15.0</td>
-					<td>15.0</td>
-					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/naturallanguage" target="_blank">Natural
-							Language</a>
-					</td>
-					<td>12.0</td>
-					<td>10.14</td>
-					<td>5.0</td>
-					<td>12.0</td>
-					<td>13.0</td>
-					<td>12.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/nearbyinteraction" target="_blank">Nearby
-							Interaction</a>
-					</td>
-					<td>14.0</td>
-					<td>11.0</td>
-					<td>8.0</td>
-					<td></td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/network" target="_blank">Network</a>
-					</td>
-					<td>12.0</td>
-					<td>10.14</td>
-					<td>6.0</td>
-					<td>12.0</td>
-					<td>13.0</td>
-					<td>12.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/networkextension" target="_blank">Network
-							Extension</a>
-					</td>
-					<td>8.0</td>
-					<td>10.10</td>
-					<td>7.0</td>
-					<td></td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/newsstandkit"
-							target="_blank">NewsstandKit</a>
-					</td>
-					<td>5.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>5.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/notificationcenter"
-							target="_blank">Notification Center</a>
-					</td>
-					<td>8.0</td>
-					<td>10.10</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/objectivec" target="_blank">Objective-C
-							Runtime</a>
-					</td>
-					<td>2.0</td>
-					<td>10.0</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/opendirectory" target="_blank">Open
-							Directory</a>
-					</td>
-					<td></td>
-					<td>10.6</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/opengles" target="_blank">OpenGL ES</a>
-					</td>
-					<td>2.0</td>
-					<td></td>
-					<td></td>
-					<td>9.0</td>
-					<td></td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/os" target="_blank">os</a>
-					</td>
-					<td>8.0</td>
-					<td>10.10</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/oslog" target="_blank">OSLog</a>
-					</td>
-					<td>15.0</td>
-					<td>10.15</td>
-					<td>8.0</td>
-					<td>15.0</td>
-					<td>15.0</td>
-					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/paravirtualizedgraphics"
-							target="_blank">Paravirtualized Graphics</a>
-					</td>
-					<td></td>
-					<td>11.0</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/passkit" target="_blank">PassKit (Apple Pay
-							and Wallet)</a>
-					</td>
-					<td>6.0</td>
-					<td>11.0</td>
-					<td>2.0</td>
-					<td></td>
-					<td>13.0</td>
-					<td>6.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/pcidriverkit"
-							target="_blank">PCIDriverKit</a>
-					</td>
-					<td></td>
-					<td>11.1</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/pdfkit" target="_blank">PDFKit</a>
-					</td>
-					<td>11.0</td>
-					<td>10.4</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>11.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/pencilkit" target="_blank">PencilKit</a>
-					</td>
-					<td>13.0</td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/phase" target="_blank">PHASE</a>
-					</td>
-					<td>15.0</td>
-					<td>12.0</td>
-					<td></td>
-					<td>15.0</td>
-					<td>15.0</td>
-					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/photokit" target="_blank">PhotoKit</a>
-					</td>
-					<td>8.0</td>
-					<td>10.11</td>
-					<td></td>
-					<td>10.0</td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/playgroundsupport" target="_blank">Playground
-							Support</a>
-					</td>
-					<td></td>
-					<td>12.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/preferencepanes" target="_blank">Preference
-							Panes</a>
-					</td>
-					<td></td>
-					<td>10.1</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/ProximityReader"
-							target="_blank">ProximityReader</a>
-					</td>
-					<td>15.4</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>15.4</td>
-					<td>15.4</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/pushkit" target="_blank">PushKit</a>
-					</td>
-					<td>8.0</td>
-					<td>10.15</td>
-					<td>6.0</td>
-					<td></td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/quartz" target="_blank">Quartz</a>
-					</td>
-					<td></td>
-					<td>10.4</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/quartzcore" target="_blank">Core
-							Animation</a>
-					</td>
-					<td>2.0</td>
-					<td>10.3</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/quicklook" target="_blank">QuickLook</a>
-					</td>
-					<td>4.0</td>
-					<td>10.5</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>4.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/quicklookthumbnailing"
-							target="_blank">QuickLook Thumbnailing</a>
-					</td>
-					<td>13.0</td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/quicklookui" target="_blank">QuickLookUI</a>
-					</td>
-					<td></td>
-					<td>12.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/realitykit" target="_blank">RealityKit</a>
-					</td>
-					<td>13.0</td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td>15.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/replaykit" target="_blank">ReplayKit</a>
-					</td>
-					<td>9.0</td>
-					<td>11.0</td>
-					<td></td>
-					<td>10.0</td>
-					<td>13.0</td>
-					<td>9.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/safariservices" target="_blank">Safari
-							Services</a>
-					</td>
-					<td>7.0</td>
-					<td>10.12</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>7.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/scenekit" target="_blank">SceneKit</a>
-					</td>
-					<td>8.0</td>
-					<td>10.8</td>
-					<td>3.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/screencapturekit"
-							target="_blank">ScreenCaptureKit</a>
-					</td>
-					<td></td>
-					<td>12.3</td>
-					<td></td>
-					<td></td>
-					<td>15.4</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/screensaver" target="_blank">Screen Saver</a>
-					</td>
-					<td></td>
-					<td>10.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/screentime" target="_blank">Screen Time</a>
-					</td>
-					<td>14.0</td>
-					<td>11.0</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/scriptingbridge" target="_blank">Scripting
-							Bridge</a>
-					</td>
-					<td></td>
-					<td>10.5</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/security" target="_blank">Security</a>
-					</td>
-					<td>2.0</td>
-					<td>10.0</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/securityfoundation" target="_blank">Security
-							Foundation</a>
-					</td>
-					<td></td>
-					<td>10.3</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/securityinterface" target="_blank">Security
-							Interface</a>
-					</td>
-					<td></td>
-					<td>10.3</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/sensorkit" target="_blank">SensorKit</a>
-					</td>
-					<td>14.0</td>
-					<td>12.3</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/servicemanagement" target="_blank">Service
-							Management</a>
-					</td>
-					<td>12.1</td>
-					<td>10.6</td>
-					<td>5.1</td>
-					<td>12.1</td>
-					<td>13.0</td>
-					<td>12.1</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/shazamkit" target="_blank">ShazamKit</a>
-					</td>
-					<td>15.0</td>
-					<td>12.0</td>
-					<td>8.0</td>
-					<td>15.0</td>
-					<td>15.0</td>
-					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/sirikit" target="_blank">SiriKit</a>
-					</td>
-					<td>10.0</td>
-					<td>12.0</td>
-					<td>3.2</td>
-					<td>14.0</td>
-					<td>13.0</td>
-					<td>10.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/sms_and_call_reporting" target="_blank">SMS
-							and Call Reporting</a>
-					</td>
-					<td>11.0</td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>11.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/social" target="_blank">Social</a>
-					</td>
-					<td>6.0</td>
-					<td>10.8</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>6.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/soundanalysis" target="_blank">Sound
-							Analysis</a>
-					</td>
-					<td>13.0</td>
-					<td>10.15</td>
-					<td>6.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/speech" target="_blank">Speech</a>
-					</td>
-					<td>10.0</td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>10.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/spritekit" target="_blank">SpriteKit</a>
-					</td>
-					<td>7.0</td>
-					<td>10.9</td>
-					<td>3.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>7.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/storekit" target="_blank">StoreKit</a>
-					</td>
-					<td>3.0</td>
-					<td>10.7</td>
-					<td>6.2</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>3.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/storekittest" target="_blank">StoreKit
-							Test</a>
-					</td>
-					<td>14.0</td>
-					<td>11.0</td>
-					<td>7.4</td>
-					<td>14.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/swift" target="_blank">Swift</a>
-					</td>
-					<td>8.0</td>
-					<td>10.10</td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/SwiftUI" target="_blank">SwiftUI</a>
-					</td>
-					<td>13.0</td>
-					<td>10.15</td>
-					<td>6.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/System" target="_blank">System</a>
-					</td>
-					<td>14.0</td>
-					<td>11.0</td>
-					<td>7.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/systemconfiguration" target="_blank">System
-							Configuration</a>
-					</td>
-					<td>2.0</td>
-					<td>10.1</td>
-					<td></td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/systemextensions" target="_blank">System
-							Extensions</a>
-					</td>
-					<td></td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/TabularData" target="_blank">TabularData</a>
-					</td>
-					<td>15.0</td>
-					<td>12.0</td>
-					<td>8.0</td>
-					<td>15.0</td>
-					<td>15.0</td>
-					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/threadnetwork"
-							target="_blank">ThreadNetwork</a>
-					</td>
-					<td>15.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>15.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/tvmljs" target="_blank">TVMLKit JS</a>
-					</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>10.0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/tvmlkit" target="_blank">TVMLKit</a>
-					</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>9.0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/tvservices" target="_blank">TV Services</a>
-					</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>9.0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/tvuikit" target="_blank">TVUIKit</a>
-					</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>12.0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/uikit" target="_blank">UIKit</a>
-					</td>
-					<td>2.0</td>
-					<td></td>
-					<td>2.0</td>
-					<td>9.0</td>
-					<td>13.0</td>
-					<td>2.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/uniformtypeidentifiers"
-							target="_blank">Uniform Type Identifiers</a>
-					</td>
-					<td>14.0</td>
-					<td>11.0</td>
-					<td>7.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/usernotifications" target="_blank">User
-							Notifications</a>
-					</td>
-					<td>10.0</td>
-					<td>10.14</td>
-					<td>3.0</td>
-					<td>10.0</td>
-					<td>13.0</td>
-					<td>10.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/usernotificationsui" target="_blank">User
-							Notifications UI</a>
-					</td>
-					<td>10.0</td>
-					<td>11.0</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>10.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/videosubscriberaccount" target="_blank">Video
-							Subscriber Account</a>
-					</td>
-					<td>10.0</td>
-					<td>10.14</td>
-					<td></td>
-					<td>10.0</td>
-					<td></td>
-					<td>10.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/videotoolbox" target="_blank">Video
-							Toolbox</a>
-					</td>
-					<td>6.0</td>
-					<td>10.8</td>
-					<td></td>
-					<td>10.2</td>
-					<td>13.0</td>
-					<td>6.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/virtualization"
-							target="_blank">Virtualization</a>
-					</td>
-					<td></td>
-					<td>11.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/vision" target="_blank">Vision</a>
-					</td>
-					<td>11.0</td>
-					<td>10.13</td>
-					<td></td>
-					<td>11.0</td>
-					<td>13.0</td>
-					<td>11.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/visionkit" target="_blank">VisionKit</a>
-					</td>
-					<td>13.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>13.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/vmnet" target="_blank">vmnet</a>
-					</td>
-					<td></td>
-					<td>10.10</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/watchconnectivity" target="_blank">Watch
-							Connectivity</a>
-					</td>
-					<td>9.0</td>
-					<td></td>
-					<td>2.0</td>
-					<td></td>
-					<td>13.0</td>
-					<td>9.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/watchkit" target="_blank">WatchKit</a>
-					</td>
-					<td></td>
-					<td></td>
-					<td>2.0</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/webkit" target="_blank">WebKit</a>
-					</td>
-					<td>8.0</td>
-					<td>10.2</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td>8.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/WidgetKit" target="_blank">WidgetKit</a>
-					</td>
-					<td>14.0</td>
-					<td>11.0</td>
-					<td></td>
-					<td></td>
-					<td>14.0</td>
-					<td>14.0</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/xcodekit" target="_blank">XcodeKit</a>
-					</td>
-					<td></td>
-					<td>10.12</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/xcselect" target="_blank">xcselect</a>
-					</td>
-					<td></td>
-					<td>10.15</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<a href="https://developer.apple.com/documentation/xpc" target="_blank">XPC</a>
-					</td>
-					<td></td>
-					<td>10.10</td>
-					<td></td>
-					<td></td>
-					<td>13.0</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>&nbsp</td>
-					<td>&nbsp</td>
-					<td>&nbsp</td>
-					<td>&nbsp</td>
-					<td>&nbsp</td>
-					<td>&nbsp</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+    <script src="node_modules/tablefilter/dist/tablefilter/tablefilter.js"></script>
+    <div class="container content p-4">
+        <h1 class="title pt-4">Public Apple Frameworks</h1>
+        <p>View all public frameworks provided by Apple and check their platform availability. Use the built-in filters
+            or perform advanced searches from text-box filters with these <a
+                href="https://github.com/koalyptus/TableFilter/wiki/4.-Filter-operators" target="_blank">operators</a>.
+        </p>
+        <form class="navbar-form navbar-left" onsubmit="filter(event);">
+            <div class="form-group field has-addons">
+                <p class="control">
+                    <span class="select">
+                        <select id="slcColumns" name="slcColumns" class="form-control" onchange="filter();">
+                            <option value="all">All frameworks</option>
+                            <option value="ios">iOS</option>
+                            <option value="ios13+">iOS 13.0+</option>
+                            <option value="ios-not-watch">iOS && !watchOS</option>
+                            <option value="mac">macOS</option>
+                            <option value="mac-not-ios">macOS && !iOS </option>
+                            <option value="watchos">watchOS</option>
+                            <option value="tvos">tvOS</option>
+                        </select>
+                    </span>
+                </p>
+                <div class="control">
+                    <button class="button is-link is-light" onclick="clearFilterAndSelectOptions();">Clear</button>
+                </div>
+            </div>
+        </form>
+        <p class="content"></p>
+        <table class="frameworks">
+            <thead>
+                <tr>
+                    <th>Framework</th>
+                    <th>iOS</th>
+                    <th>macOS</th>
+                    <th>watchOS</th>
+                    <th>tvOS</th>
+                    <th>macCatalyst</th>
+                    <th>iPadOS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/accelerate" target="_blank">Accelerate</a>
+                    </td>
+                    <td>4.0</td>
+                    <td>10.3</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/accessibility"
+                            target="_blank">Accessibility</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                    <td>7.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/accounts" target="_blank">Accounts</a>
+                    </td>
+                    <td>5.0</td>
+                    <td>10.8</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>5.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/ad_services" target="_blank">AdServices</a>
+                    </td>
+                    <td>14.3</td>
+                    <td>11.1</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.3</td>
+                    <td>14.3</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/addressbook" target="_blank">Address Book</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.2</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/addressbookui" target="_blank">Address Book
+                            UI</a>
+                    </td>
+                    <td>2.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/adsupport" target="_blank">AdSupport</a>
+                    </td>
+                    <td>6.0</td>
+                    <td>10.14</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>6.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/agl" target="_blank">AGL</a>
+                    </td>
+                    <td></td>
+                    <td>10.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/app_clips" target="_blank">App Clips</a>
+                    </td>
+                    <td>14.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/AppIntents" target="_blank">App Intents
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/appkit" target="_blank">AppKit</a>
+                    </td>
+                    <td></td>
+                    <td>10.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/applearchive" target="_blank">Apple
+                            Archive</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                    <td>7.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/applicationservices"
+                            target="_blank">Application Services</a>
+                    </td>
+                    <td></td>
+                    <td>10.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/apptrackingtransparency" target="_blank">App
+                            Tracking Transparency</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/arkit" target="_blank">ARKit</a>
+                    </td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/assetslibrary" target="_blank">Assets
+                            Library</a>
+                    </td>
+                    <td>4.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/audiotoolbox" target="_blank">Audio
+                            Toolbox</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.0</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/audiounit" target="_blank">Audio Unit</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.0</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/authenticationservices"
+                            target="_blank">Authentication Services</a>
+                    </td>
+                    <td>12.0</td>
+                    <td>10.15</td>
+                    <td>6.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                    <td>12.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/automaticassessmentconfiguration"
+                            target="_blank">Automatic Assessment Configuration</a>
+                    </td>
+                    <td>13.4</td>
+                    <td>10.15.4</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.4</td>
+                    <td>13.4</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/automator" target="_blank">Automator</a>
+                    </td>
+                    <td></td>
+                    <td>10.4</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/avfaudio" target="_blank">AVFAudio
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>14.5</td>
+                    <td>11.3</td>
+                    <td>9.0</td>
+                    <td>14.5</td>
+                    <td>14.5</td>
+                    <td>14.5</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/avfoundation"
+                            target="_blank">AVFoundation</a>
+                    </td>
+                    <td>2.2</td>
+                    <td>10.7</td>
+                    <td>3.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.2</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/avkit" target="_blank">AVKit
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.9</td>
+                    <td>9.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/avrouting" target="_blank">AVRouting
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/backgroundassets" target="_blank">Background
+                            Assets
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/backgroundtasks" target="_blank">Background
+                            Tasks</a>
+                    </td>
+                    <td>13.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/bundleresources" target="_blank">Bundle
+                            Resources</a>
+                    </td>
+                    <td>13.0</td>
+                    <td>10.15</td>
+                    <td>6.0</td>
+                    <td>13.0</td>
+                    <td></td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/callkit" target="_blank">CallKit
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>10.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>10.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/CarKey" target="_blank">CarKey
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/carplay" target="_blank">CarPlay</a>
+                    </td>
+                    <td>12.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>12.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/cfnetwork" target="_blank">CFNetwork</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.8</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/Charts" target="_blank">Swift Charts
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/classkit" target="_blank">ClassKit</a>
+                    </td>
+                    <td>11.4</td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>11.4</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/clockkit" target="_blank">ClockKit</a>
+                    </td>
+                    <td>14.0</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/cloudkit" target="_blank">CloudKit</a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.10</td>
+                    <td>3.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/collaboration"
+                            target="_blank">Collaboration</a>
+                    </td>
+                    <td></td>
+                    <td>10.5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/colorsync" target="_blank">ColorSync
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>10.13</td>
+                    <td>9.0</td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/Combine" target="_blank">Combine</a>
+                    </td>
+                    <td>13.0</td>
+                    <td>10.15</td>
+                    <td>6.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/compression" target="_blank">Compression</a>
+                    </td>
+                    <td>9.0</td>
+                    <td>10.11</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/contacts" target="_blank">Contacts</a>
+                    </td>
+                    <td>9.0</td>
+                    <td>10.11</td>
+                    <td>2.0</td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/contactsui" target="_blank">Contacts UI</a>
+                    </td>
+                    <td>9.0</td>
+                    <td>10.11</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coreaudio" target="_blank">Core Audio</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.0</td>
+                    <td>3.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coreaudiokit" target="_blank">Core Audio
+                            Kit</a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.4</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coreaudiotypes" target="_blank">Core Audio
+                            Types</a>
+                    </td>
+                    <td>13.0</td>
+                    <td>10.15</td>
+                    <td>6.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/corebluetooth" target="_blank">Core
+                            Bluetooth</a>
+                    </td>
+                    <td>5.0</td>
+                    <td>10.10</td>
+                    <td>4.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>5.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coredata" target="_blank">Core Data</a>
+                    </td>
+                    <td>3.0</td>
+                    <td>10.4</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>3.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/corefoundation" target="_blank">Core
+                            Foundation</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.0</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coregraphics" target="_blank">Core
+                            Graphics</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.8</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/corehaptics" target="_blank">Core Haptics</a>
+                    </td>
+                    <td>13.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coreimage" target="_blank">Core Image</a>
+                    </td>
+                    <td>5.0</td>
+                    <td>10.11</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>5.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/corelocation" target="_blank">Core
+                            Location</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.6</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/corelocationui"
+                            target="_blank">CoreLocationUI</a>
+                    </td>
+                    <td>15.0</td>
+                    <td></td>
+                    <td>8.0</td>
+                    <td></td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coremedia" target="_blank">Core Media</a>
+                    </td>
+                    <td>4.0</td>
+                    <td>10.7</td>
+                    <td>6.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coremediaio" target="_blank">Core Media
+                            I/O</a>
+                    </td>
+                    <td></td>
+                    <td>10.7</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coremidi" target="_blank">Core MIDI</a>
+                    </td>
+                    <td>4.2</td>
+                    <td>10.0</td>
+                    <td>8.0</td>
+                    <td>15.0</td>
+                    <td>13.0</td>
+                    <td>4.2</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coreml" target="_blank">Core ML</a>
+                    </td>
+                    <td>11.0</td>
+                    <td>10.13</td>
+                    <td>4.0</td>
+                    <td>11.0</td>
+                    <td>13.0</td>
+                    <td>11.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coremotion" target="_blank">Core Motion</a>
+                    </td>
+                    <td>4.0</td>
+                    <td>10.15</td>
+                    <td>2.0</td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/corenfc" target="_blank">Core NFC</a>
+                    </td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>11.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coreservices" target="_blank">Core
+                            Services</a>
+                    </td>
+                    <td>12.0</td>
+                    <td>10.0</td>
+                    <td>5.0</td>
+                    <td>12.0</td>
+                    <td>13.0</td>
+                    <td>12.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/corespotlight" target="_blank">Core
+                            Spotlight</a>
+                    </td>
+                    <td>9.0</td>
+                    <td>10.13</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coretelephony" target="_blank">Core
+                            Telephony</a>
+                    </td>
+                    <td>4.0</td>
+                    <td>10.10</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/coretext" target="_blank">Core Text</a>
+                    </td>
+                    <td>3.2</td>
+                    <td>10.8</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>3.2</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/CoreTransferable" target="_blank">Core
+                            Transferable
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/corevideo" target="_blank">Core Video</a>
+                    </td>
+                    <td>4.0</td>
+                    <td>10.4</td>
+                    <td>4.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/corewlan" target="_blank">Core WLAN</a>
+                    </td>
+                    <td></td>
+                    <td>10.6</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/CreateML" target="_blank">CreateML</a>
+                    </td>
+                    <td>15.0</td>
+                    <td>10.14</td>
+                    <td></td>
+                    <td></td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/cryptokit" target="_blank">Apple CryptoKit
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>13.0</td>
+                    <td>10.15</td>
+                    <td>9.0</td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/cryptotokenkit"
+                            target="_blank">CryptoTokenKit</a>
+                    </td>
+                    <td>13.0</td>
+                    <td>10.10</td>
+                    <td>8.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/darwinnotify" target="_blank">Darwin
+                            Notify</a>
+                    </td>
+                    <td>9.3</td>
+                    <td>10.14</td>
+                    <td>2.2</td>
+                    <td>9.2</td>
+                    <td>13.0</td>
+                    <td>9.3</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/DeveloperToolsSupport"
+                            target="_blank">DeveloperToolsSupport</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                    <td>7.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/DeviceActivity"
+                            target="_blank">DeviceActivity</a>
+                    </td>
+                    <td>15.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/devicecheck" target="_blank">DeviceCheck
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>11.0</td>
+                    <td>10.15</td>
+                    <td>9.0</td>
+                    <td>11.0</td>
+                    <td>13.0</td>
+                    <td>11.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/devicediscoveryextension"
+                            target="_blank">DeviceDiscoveryExtension
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>16.0</td>
+                    <td></td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/devicediscoveryui"
+                            target="_blank">DeviceDiscoveryUI
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>16.0</td>
+                    <td></td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/diskarbitration" target="_blank">Disk
+                            Arbitration</a>
+                    </td>
+                    <td></td>
+                    <td>10.4</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/dispatch" target="_blank">Dispatch</a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.10</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/Distributed" target="_blank">Distributed
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/dnssd" target="_blank">dnssd</a>
+                    </td>
+                    <td>10.0</td>
+                    <td>10.12</td>
+                    <td>3.0</td>
+                    <td>10.0</td>
+                    <td>13.0</td>
+                    <td>10.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/driverkit" target="_blank">DriverKit
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/endpointsecurity" target="_blank">Endpoint
+                            Security</a>
+                    </td>
+                    <td></td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/eventkit" target="_blank">EventKit</a>
+                    </td>
+                    <td>4.0</td>
+                    <td>10.8</td>
+                    <td>2.0</td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/eventkitui" target="_blank">EventKit UI</a>
+                    </td>
+                    <td>4.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/exceptionhandling" target="_blank">Exception
+                            Handling</a>
+                    </td>
+                    <td></td>
+                    <td>10.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/executionpolicy" target="_blank">Execution
+                            Policy</a>
+                    </td>
+                    <td></td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/exposurenotification"
+                            target="_blank">Exposure Notification</a>
+                    </td>
+                    <td>13.5</td>
+                    <td>12.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>15.0</td>
+                    <td>13.5</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/extensionfoundation"
+                            target="_blank">ExtensionFoundation
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/extensionkit" target="_blank">ExtensionKit
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/externalaccessory" target="_blank">External
+                            Accessory</a>
+                    </td>
+                    <td>3.0</td>
+                    <td>10.13</td>
+                    <td></td>
+                    <td>10.0</td>
+                    <td>13.0</td>
+                    <td>3.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/FamilyControls"
+                            target="_blank">FamilyControls</a>
+                    </td>
+                    <td>15.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/fileprovider" target="_blank">File
+                            Provider</a>
+                    </td>
+                    <td>11.0</td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>11.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/fileproviderui" target="_blank">File Provider
+                            UI</a>
+                    </td>
+                    <td>11.0</td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td>15.0</td>
+                    <td>11.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/findersync" target="_blank">Finder Sync</a>
+                    </td>
+                    <td></td>
+                    <td>10.10</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/forcefeedback" target="_blank">Force
+                            Feedback</a>
+                    </td>
+                    <td></td>
+                    <td>10.2</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/foundation" target="_blank">Foundation</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.0</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/gamecontroller" target="_blank">Game
+                            Controller</a>
+                    </td>
+                    <td>7.0</td>
+                    <td>10.9</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/gamekit" target="_blank">GameKit</a>
+                    </td>
+                    <td>3.0</td>
+                    <td>10.8</td>
+                    <td>3.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>3.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/gameplaykit" target="_blank">GameplayKit</a>
+                    </td>
+                    <td>9.0</td>
+                    <td>10.11</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/glkit" target="_blank">GLKit</a>
+                    </td>
+                    <td>5.0</td>
+                    <td>10.8</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td></td>
+                    <td>5.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/GroupActivities"
+                            target="_blank">GroupActivities</a>
+                    </td>
+                    <td>15.0</td>
+                    <td>12.0</td>
+                    <td></td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/gss" target="_blank">GSS</a>
+                    </td>
+                    <td>5.0</td>
+                    <td>10.14</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>5.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/healthkit" target="_blank">HealthKit
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>8.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/hiddriverkit"
+                            target="_blank">HIDDriverKit</a>
+                    </td>
+                    <td></td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/homekit" target="_blank">HomeKit</a>
+                    </td>
+                    <td>8.0</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>10.0</td>
+                    <td>14.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/hypervisor" target="_blank">Hypervisor</a>
+                    </td>
+                    <td></td>
+                    <td>10.10</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/iad" target="_blank">iAd</a>
+                    </td>
+                    <td>4.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/imagecapturecore"
+                            target="_blank">ImageCaptureCore</a>
+                    </td>
+                    <td>13.0</td>
+                    <td>10.6</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/imageio" target="_blank">Image I/O</a>
+                    </td>
+                    <td>4.0</td>
+                    <td>10.8</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/inputmethodkit"
+                            target="_blank">InputMethodKit</a>
+                    </td>
+                    <td></td>
+                    <td>10.5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/iobluetooth" target="_blank">IOBluetooth</a>
+                    </td>
+                    <td></td>
+                    <td>10.2</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/iobluetoothui" target="_blank">IOBluetooth
+                            UI</a>
+                    </td>
+                    <td></td>
+                    <td>10.2</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/iokit" target="_blank">IOKit</a>
+                    </td>
+                    <td></td>
+                    <td>10.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/iosurface" target="_blank">IOSurface</a>
+                    </td>
+                    <td>11.0</td>
+                    <td>10.6</td>
+                    <td></td>
+                    <td>11.0</td>
+                    <td>13.0</td>
+                    <td>11.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/iousbhost" target="_blank">IOUSBHost</a>
+                    </td>
+                    <td></td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/ituneslibrary" target="_blank">iTunes
+                            Library</a>
+                    </td>
+                    <td></td>
+                    <td>10.13</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/javascriptcore"
+                            target="_blank">JavaScriptCore
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>10.5</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/kernel" target="_blank">Kernel</a>
+                    </td>
+                    <td></td>
+                    <td>10.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/kernelmanagement" target="_blank">Kernel
+                            Management</a>
+                    </td>
+                    <td></td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/latentsemanticmapping" target="_blank">Latent
+                            Semantic Mapping</a>
+                    </td>
+                    <td></td>
+                    <td>10.5</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/linkpresentation" target="_blank">Link
+                            Presentation</a>
+                    </td>
+                    <td>13.0</td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/localauthentication" target="_blank">Local
+                            Authentication
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.10</td>
+                    <td>9.0</td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/localauthenticationembeddedui"
+                            target="_blank">Local Authentication Embedded UI
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>12.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/mailkit" target="_blank">MailKit</a>
+                    </td>
+                    <td></td>
+                    <td>12.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/mapkit" target="_blank">MapKit</a>
+                    </td>
+                    <td>3.0</td>
+                    <td>10.9</td>
+                    <td>2.0</td>
+                    <td>9.2</td>
+                    <td>13.0</td>
+                    <td>3.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/mediaaccessibility" target="_blank">Media
+                            Accessibility</a>
+                    </td>
+                    <td>7.0</td>
+                    <td>10.9</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/medialibrary" target="_blank">Media
+                            Library</a>
+                    </td>
+                    <td></td>
+                    <td>10.9</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/mediaplayer" target="_blank">Media Player</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.12.1</td>
+                    <td>5.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/mediasetup" target="_blank">Media Setup</a>
+                    </td>
+                    <td>14.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>15.4</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/messages" target="_blank">Messages</a>
+                    </td>
+                    <td>10.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>10.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/messageui" target="_blank">Message UI</a>
+                    </td>
+                    <td>3.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>3.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/metal" target="_blank">Metal</a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.11</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/metalfx" target="_blank">MetalFX
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/metalkit" target="_blank">MetalKit</a>
+                    </td>
+                    <td>9.0</td>
+                    <td>10.11</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/metalperformanceshaders"
+                            target="_blank">Metal Performance Shaders</a>
+                    </td>
+                    <td>9.0</td>
+                    <td>10.13</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/metalperformanceshadersgraph"
+                            target="_blank">Metal Performance Shaders Graph</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/metrickit" target="_blank">MetricKit</a>
+                    </td>
+                    <td>13.0</td>
+                    <td>12.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/mlcompute" target="_blank">ML Compute</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/modelio" target="_blank">Model I/O</a>
+                    </td>
+                    <td>9.0</td>
+                    <td>10.11</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/multipeerconnectivity"
+                            target="_blank">Multipeer Connectivity</a>
+                    </td>
+                    <td>7.0</td>
+                    <td>10.10</td>
+                    <td></td>
+                    <td>10.0</td>
+                    <td>13.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/MusicKit" target="_blank">MusicKit</a>
+                    </td>
+                    <td>15.0</td>
+                    <td>12.0</td>
+                    <td>8.0</td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/naturallanguage" target="_blank">Natural
+                            Language</a>
+                    </td>
+                    <td>12.0</td>
+                    <td>10.14</td>
+                    <td>5.0</td>
+                    <td>12.0</td>
+                    <td>13.0</td>
+                    <td>12.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/nearbyinteraction" target="_blank">Nearby
+                            Interaction</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                    <td>8.0</td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/network" target="_blank">Network</a>
+                    </td>
+                    <td>12.0</td>
+                    <td>10.14</td>
+                    <td>6.0</td>
+                    <td>12.0</td>
+                    <td>13.0</td>
+                    <td>12.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/networkextension" target="_blank">Network
+                            Extension</a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.10</td>
+                    <td>7.0</td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/newsstandkit"
+                            target="_blank">NewsstandKit</a>
+                    </td>
+                    <td>5.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>5.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/notificationcenter"
+                            target="_blank">Notification Center</a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.10</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/objectivec" target="_blank">Objective-C
+                            Runtime</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.0</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/opendirectory" target="_blank">Open
+                            Directory</a>
+                    </td>
+                    <td></td>
+                    <td>10.6</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/opengles" target="_blank">OpenGL ES</a>
+                    </td>
+                    <td>2.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td></td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/os" target="_blank">os</a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.10</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/oslog" target="_blank">OSLog</a>
+                    </td>
+                    <td>15.0</td>
+                    <td>10.15</td>
+                    <td>8.0</td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/paravirtualizedgraphics"
+                            target="_blank">Paravirtualized Graphics</a>
+                    </td>
+                    <td></td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/passkit" target="_blank">PassKit (Apple Pay
+                            and Wallet)</a>
+                    </td>
+                    <td>6.0</td>
+                    <td>11.0</td>
+                    <td>2.0</td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>6.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/pcidriverkit"
+                            target="_blank">PCIDriverKit</a>
+                    </td>
+                    <td></td>
+                    <td>11.1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/pdfkit" target="_blank">PDFKit</a>
+                    </td>
+                    <td>11.0</td>
+                    <td>10.4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>11.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/pencilkit" target="_blank">PencilKit</a>
+                    </td>
+                    <td>13.0</td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/phase" target="_blank">PHASE</a>
+                    </td>
+                    <td>15.0</td>
+                    <td>12.0</td>
+                    <td></td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/photokit" target="_blank">PhotoKit
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.11</td>
+                    <td>9.0</td>
+                    <td>10.0</td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/playgroundsupport" target="_blank">Playground
+                            Support</a>
+                    </td>
+                    <td></td>
+                    <td>12.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/preferencepanes" target="_blank">Preference
+                            Panes</a>
+                    </td>
+                    <td></td>
+                    <td>10.1</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/ProximityReader"
+                            target="_blank">ProximityReader</a>
+                    </td>
+                    <td>15.4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>15.4</td>
+                    <td>15.4</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/pushkit" target="_blank">PushKit</a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.15</td>
+                    <td>6.0</td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/quartz" target="_blank">Quartz</a>
+                    </td>
+                    <td></td>
+                    <td>10.4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/quartzcore" target="_blank">Core
+                            Animation</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.3</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/quicklook" target="_blank">QuickLook</a>
+                    </td>
+                    <td>4.0</td>
+                    <td>10.5</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/quicklookthumbnailing"
+                            target="_blank">QuickLook Thumbnailing</a>
+                    </td>
+                    <td>13.0</td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/quicklookui" target="_blank">QuickLookUI</a>
+                    </td>
+                    <td></td>
+                    <td>12.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/RealityKit" target="_blank">RealityKit</a>
+                    </td>
+                    <td>13.0</td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/RegexBuilder" target="_blank">RegexBuilder
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/replaykit" target="_blank">ReplayKit</a>
+                    </td>
+                    <td>9.0</td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td>10.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/RoomPlan" target="_blank">RoomPlan
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/safariservices" target="_blank">Safari
+                            Services</a>
+                    </td>
+                    <td>7.0</td>
+                    <td>10.12</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/scenekit" target="_blank">SceneKit</a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.8</td>
+                    <td>3.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/screencapturekit"
+                            target="_blank">ScreenCaptureKit</a>
+                    </td>
+                    <td></td>
+                    <td>12.3</td>
+                    <td></td>
+                    <td></td>
+                    <td>15.4</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/screensaver" target="_blank">Screen Saver</a>
+                    </td>
+                    <td></td>
+                    <td>10.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/screentime" target="_blank">Screen Time</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/scriptingbridge" target="_blank">Scripting
+                            Bridge</a>
+                    </td>
+                    <td></td>
+                    <td>10.5</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/security" target="_blank">Security</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.0</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/securityfoundation" target="_blank">Security
+                            Foundation</a>
+                    </td>
+                    <td></td>
+                    <td>10.3</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/securityinterface" target="_blank">Security
+                            Interface</a>
+                    </td>
+                    <td></td>
+                    <td>10.3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/sensorkit" target="_blank">SensorKit</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>12.3</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/servicemanagement" target="_blank">Service
+                            Management</a>
+                    </td>
+                    <td>12.1</td>
+                    <td>10.6</td>
+                    <td>5.1</td>
+                    <td>12.1</td>
+                    <td>13.0</td>
+                    <td>12.1</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/sharedwithyou" target="_blank">Shared with
+                            You
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td></td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/shazamkit" target="_blank">ShazamKit
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>15.0</td>
+                    <td>12.0</td>
+                    <td>9.0</td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/sirikit" target="_blank">SiriKit</a>
+                    </td>
+                    <td>10.0</td>
+                    <td>12.0</td>
+                    <td>3.2</td>
+                    <td>14.0</td>
+                    <td>13.0</td>
+                    <td>10.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/sms_and_call_reporting" target="_blank">SMS
+                            and Call Reporting</a>
+                    </td>
+                    <td>11.0</td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>11.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/social" target="_blank">Social</a>
+                    </td>
+                    <td>6.0</td>
+                    <td>10.8</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>6.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/soundanalysis" target="_blank">Sound Analysis
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>13.0</td>
+                    <td>10.15</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/spatial" target="_blank">Spatial
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/speech" target="_blank">Speech</a>
+                    </td>
+                    <td>10.0</td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>10.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/spritekit" target="_blank">SpriteKit</a>
+                    </td>
+                    <td>7.0</td>
+                    <td>10.9</td>
+                    <td>3.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/storekit" target="_blank">StoreKit</a>
+                    </td>
+                    <td>3.0</td>
+                    <td>10.7</td>
+                    <td>6.2</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>3.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/storekittest" target="_blank">StoreKit
+                            Test</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                    <td>7.4</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/Swift" target="_blank">Swift</a>
+                    </td>
+                    <td>8.0</td>
+                    <td>10.10</td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/SwiftUI" target="_blank">SwiftUI</a>
+                    </td>
+                    <td>13.0</td>
+                    <td>10.15</td>
+                    <td>6.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/System" target="_blank">System</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                    <td>7.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/systemconfiguration" target="_blank">System
+                            Configuration</a>
+                    </td>
+                    <td>2.0</td>
+                    <td>10.1</td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/systemextensions" target="_blank">System
+                            Extensions</a>
+                    </td>
+                    <td></td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/TabularData" target="_blank">TabularData</a>
+                    </td>
+                    <td>15.0</td>
+                    <td>12.0</td>
+                    <td>8.0</td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                    <td>15.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/threadnetwork"
+                            target="_blank">ThreadNetwork</a>
+                    </td>
+                    <td>15.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>15.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/tvmljs" target="_blank">TVMLKit JS</a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>10.0</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/tvmlkit" target="_blank">TVMLKit</a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/tvservices" target="_blank">TV Services</a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>9.0</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/tvuikit" target="_blank">TVUIKit</a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>12.0</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/uikit" target="_blank">UIKit</a>
+                    </td>
+                    <td>2.0</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td>9.0</td>
+                    <td>13.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/uniformtypeidentifiers"
+                            target="_blank">Uniform Type Identifiers</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                    <td>7.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/usernotifications" target="_blank">User
+                            Notifications</a>
+                    </td>
+                    <td>10.0</td>
+                    <td>10.14</td>
+                    <td>3.0</td>
+                    <td>10.0</td>
+                    <td>13.0</td>
+                    <td>10.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/usernotificationsui" target="_blank">User
+                            Notifications UI</a>
+                    </td>
+                    <td>10.0</td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>10.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/videosubscriberaccount" target="_blank">Video
+                            Subscriber Account</a>
+                    </td>
+                    <td>10.0</td>
+                    <td>10.14</td>
+                    <td></td>
+                    <td>10.0</td>
+                    <td></td>
+                    <td>10.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/videotoolbox" target="_blank">Video
+                            Toolbox</a>
+                    </td>
+                    <td>6.0</td>
+                    <td>10.8</td>
+                    <td></td>
+                    <td>10.2</td>
+                    <td>13.0</td>
+                    <td>6.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/virtualization"
+                            target="_blank">Virtualization</a>
+                    </td>
+                    <td></td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/vision" target="_blank">Vision</a>
+                    </td>
+                    <td>11.0</td>
+                    <td>10.13</td>
+                    <td></td>
+                    <td>11.0</td>
+                    <td>13.0</td>
+                    <td>11.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/visionkit" target="_blank">VisionKit
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/vmnet" target="_blank">vmnet</a>
+                    </td>
+                    <td></td>
+                    <td>10.10</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/watchconnectivity" target="_blank">Watch
+                            Connectivity</a>
+                    </td>
+                    <td>9.0</td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/watchkit" target="_blank">WatchKit</a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>2.0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/WeatherKit" target="_blank">WeatherKit
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>13.0</td>
+                    <td>9.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/webkit" target="_blank">WebKit
+                            <span class="tag is-info"> Beta</span>
+                        </a>
+                    </td>
+                    <td>16.0</td>
+                    <td>10.2</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td>16.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/WidgetKit" target="_blank">WidgetKit</a>
+                    </td>
+                    <td>14.0</td>
+                    <td>11.0</td>
+                    <td></td>
+                    <td></td>
+                    <td>14.0</td>
+                    <td>14.0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/xcodekit" target="_blank">XcodeKit</a>
+                    </td>
+                    <td></td>
+                    <td>10.12</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/xcselect" target="_blank">xcselect</a>
+                    </td>
+                    <td></td>
+                    <td>10.15</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://developer.apple.com/documentation/xpc" target="_blank">XPC</a>
+                    </td>
+                    <td></td>
+                    <td>10.10</td>
+                    <td></td>
+                    <td></td>
+                    <td>13.0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>&nbsp</td>
+                    <td>&nbsp</td>
+                    <td>&nbsp</td>
+                    <td>&nbsp</td>
+                    <td>&nbsp</td>
+                    <td>&nbsp</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 
-	<footer class="footer">
-		<div class="content has-text-centered">
-			<p>Last updated: June 3, 2022</p>
-			<p>
-				Website created by <a href="https://www.eidinger.us/">Marco Eidinger</a>
-			</p>
-			<p>
-				Using <a href="http://mguglielmi.free.fr/">TableFilter</a> created by <a
-					href="http://mguglielmi.free.fr/">Max Guglielmi</a>
-			</p>
-		</div>
-	</footer>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>Last updated: June 6, 2022</p>
+            <p>
+                Website created by <a href="https://www.eidinger.us/">Marco Eidinger</a>
+            </p>
+            <p>
+                Using <a href="http://mguglielmi.free.fr/">TableFilter</a> created by <a
+                    href="http://mguglielmi.free.fr/">Max Guglielmi</a>
+            </p>
+        </div>
+    </footer>
 
 
-	<script data-config>
+    <script data-config>
 
-		function removeOptions(selectElement) {
-			var i, L = selectElement.options.length - 1;
-			for (i = L; i >= 0; i--) {
-				selectElement.remove(i);
-			}
-		}
+        function removeOptions(selectElement) {
+            var i, L = selectElement.options.length - 1;
+            for (i = L; i >= 0; i--) {
+                selectElement.remove(i);
+            }
+        }
 
-		function clearFilterAndSelectOptions() {
-			tf.clearFilters();
-			var dropDown = document.getElementById("slcColumns");
-			dropDown.selectedIndex = 0;
-		}
+        function clearFilterAndSelectOptions() {
+            tf.clearFilters();
+            var dropDown = document.getElementById("slcColumns");
+            dropDown.selectedIndex = 0;
+        }
 
-		function filter(evt) {
-			var frm = document.forms[0];
-			var slcCols = frm.slcColumns;
-			tf.clearFilters();
-			if (slcCols.value === "all") {
-				tf.clearFilters();
-			}
-			if (slcCols.value === "ios") {
-				tf.setFilterValue(1, '[nonempty]');
-			}
-			if (slcCols.value === "ios13+") {
-				tf.setFilterValue(1, '>= 13');
-			}
-			if (slcCols.value === "ios-not-watch") {
-				tf.setFilterValue(1, '[nonempty]');
-				tf.setFilterValue(3, '[empty]');
-			}
-			if (slcCols.value === "mac") {
-				tf.setFilterValue(2, '[nonempty]');
-			}
-			if (slcCols.value === "mac-not-ios") {
-				tf.setFilterValue(1, '[empty]');
-				tf.setFilterValue(2, '[nonempty]');
-			}
-			if (slcCols.value === "watchos") {
-				tf.setFilterValue(3, '[nonempty]');
-			}
-			if (slcCols.value === "tvos") {
-				tf.setFilterValue(4, '[nonempty]');
+        function filter(evt) {
+            var frm = document.forms[0];
+            var slcCols = frm.slcColumns;
+            tf.clearFilters();
+            if (slcCols.value === "all") {
+                tf.clearFilters();
+            }
+            if (slcCols.value === "ios") {
+                tf.setFilterValue(1, '[nonempty]');
+            }
+            if (slcCols.value === "ios13+") {
+                tf.setFilterValue(1, '>= 13');
+            }
+            if (slcCols.value === "ios-not-watch") {
+                tf.setFilterValue(1, '[nonempty]');
+                tf.setFilterValue(3, '[empty]');
+            }
+            if (slcCols.value === "mac") {
+                tf.setFilterValue(2, '[nonempty]');
+            }
+            if (slcCols.value === "mac-not-ios") {
+                tf.setFilterValue(1, '[empty]');
+                tf.setFilterValue(2, '[nonempty]');
+            }
+            if (slcCols.value === "watchos") {
+                tf.setFilterValue(3, '[nonempty]');
+            }
+            if (slcCols.value === "tvos") {
+                tf.setFilterValue(4, '[nonempty]');
 
-			}
+            }
 
-			tf.filter();
+            tf.filter();
 
-			evt.preventDefault();
-		}
+            evt.preventDefault();
+        }
 
-		var filtersConfig = {
-			// instruct TableFilter location to import ressources from
-			base_path: 'https://unpkg.com/tablefilter@latest/dist/tablefilter/',
-			sticky_headers: true, // does not work with responsive: true,
-			auto_filter: {
-				delay: 500 //milliseconds
-			},
-			alternate_rows: true,
-			rows_counter: true,
-			status_bar: true,
-			col_types: [
-				'string', 'string', 'string',
-				'string', 'string', 'string'
-			],
-			on_filters_loaded: function (o) {
-				tf.filter();
-			}
-		};
+        var filtersConfig = {
+            // instruct TableFilter location to import ressources from
+            base_path: 'https://unpkg.com/tablefilter@latest/dist/tablefilter/',
+            sticky_headers: true, // does not work with responsive: true,
+            auto_filter: {
+                delay: 500 //milliseconds
+            },
+            alternate_rows: true,
+            rows_counter: true,
+            status_bar: true,
+            col_types: [
+                'string', 'string', 'string',
+                'string', 'string', 'string'
+            ],
+            on_filters_loaded: function (o) {
+                tf.filter();
+            }
+        };
 
-		var tf = new TableFilter(document.querySelector('.frameworks'), filtersConfig);
-		tf.init();
-	</script>
+        var tf = new TableFilter(document.querySelector('.frameworks'), filtersConfig);
+        tf.init();
+    </script>
 
-	<style>
-		/** sticky table header */
-		.TF.sticky th {
-			top: 0px !important;
-			/* important for Safari */
-			text-align: left !important;
-		}
-	</style>
+    <style>
+        /** sticky table header */
+        .TF.sticky th {
+            top: 0px !important;
+            /* important for Safari */
+            text-align: left !important;
+        }
+    </style>
 </body>
 
 </html>
