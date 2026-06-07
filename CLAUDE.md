@@ -60,24 +60,23 @@ Framework data is embedded directly in the HTML table (lines 86-3498). The `<tbo
 
 The `appleframeworks-cli` repository contains a Swift program that:
 
-1. **Scrapes framework data** from Apple's developer documentation using the `AppleFrameworkDocumentation` Swift package
+1. **Dynamically fetches all frameworks** from Apple's developer documentation API using `AppleFrameworkDocumentationProvider().fetchTechnologies()`
 2. **Fetches metadata** for each framework including:
    - Framework name and description
    - Platform availability (iOS, macOS, watchOS, tvOS, visionOS, macCatalyst, iPadOS)
    - Minimum version introduced on each platform
    - Beta and deprecated status
-3. **Generates `<tbody>` HTML** via the `tbodyHTML()` extension method (CLI.swift, lines 552-568)
+3. **Generates `<tbody>` HTML** via the `tbodyHTML()` extension method
 4. **Copies output to clipboard** for pasting into `index.html`
 
 **To update framework data**:
 
 1. Navigate to `../appleframeworks-cli`
-2. Update the `frameworks` array in `CLI.swift` with new framework slugs (see README.md for how to gather framework names from developer.apple.com)
-3. Run the Swift CLI program (builds and executes via Xcode)
-4. The generated `<tbody>` HTML is copied to clipboard
-5. Replace the existing `<tbody>` section in `index.html` (lines 86-3498) with the clipboard content
+2. Run the Swift CLI program (builds and executes via Xcode) or use the macOS app
+3. The generated `<tbody>` HTML is copied to clipboard
+4. Replace the existing `<tbody>` section in `index.html` (lines 86-3498) with the clipboard content
 
-**Note**: Line 490 in CLI.swift currently copies beta frameworks markdown table. To generate the full HTML table, uncomment line 490 and comment out line 489.
+**Note**: As of June 2026, both the CLI and App dynamically fetch all frameworks from Apple's API, eliminating the need to manually update framework lists. The tools are now always up-to-date with new framework releases.
 
 ### Manual Framework Data Structure
 
