@@ -52,15 +52,32 @@
                     <span class="select">
                         <select id="slcColumns" name="slcColumns" class="form-control" onchange="filter();">
                             <option value="all">All frameworks</option>
-                            <option value="beta">All Beta frameworks</option>
-                            <option value="ios">iOS</option>
-                            <option value="ios13+">iOS 13.0+</option>
-                            <option value="ios-not-watch">iOS && !watchOS</option>
-                            <option value="mac">macOS</option>
-                            <option value="mac-not-ios">macOS && !iOS </option>
-                            <option value="watchos">watchOS</option>
-                            <option value="tvos">tvOS</option>
-                            <option value="visionOS">visionOS</option>
+                            <optgroup label="By Status">
+                                <option value="beta">Beta frameworks</option>
+                                <option value="deprecated">Deprecated frameworks</option>
+                            </optgroup>
+                            <optgroup label="By Platform">
+                                <option value="ios">iOS</option>
+                                <option value="ios13+">iOS 13.0+</option>
+                                <option value="ios-not-watch">iOS && !watchOS</option>
+                                <option value="mac">macOS</option>
+                                <option value="mac-not-ios">macOS && !iOS</option>
+                                <option value="watchos">watchOS</option>
+                                <option value="tvos">tvOS</option>
+                                <option value="visionOS">visionOS</option>
+                                <option value="macCatalyst">macCatalyst</option>
+                                <option value="ipados">iPadOS</option>
+                            </optgroup>
+                            <optgroup label="By Category">
+                                <option value="category-graphics">Graphics & Gaming</option>
+                                <option value="category-ui">UI Frameworks</option>
+                                <option value="category-media">Media & Audio</option>
+                                <option value="category-ml">Machine Learning</option>
+                                <option value="category-network">Networking</option>
+                                <option value="category-data">Data & Storage</option>
+                                <option value="category-system">System & Services</option>
+                                <option value="category-developer">Developer Tools</option>
+                            </optgroup>
                         </select>
                     </span>
                 </p>
@@ -70,6 +87,7 @@
             </div>
         </form>
         <p class="content"></p>
+        <div class="table-container">
         <table class="frameworks">
             <thead>
                 <tr>
@@ -3480,6 +3498,7 @@
                 </tr>
             </tbody>
         </table>
+        </div>
     </div>
 
 
@@ -3499,6 +3518,40 @@
 
     <script data-config>
 
+        // Framework categories mapping
+        const frameworkCategories = {
+            'graphics': ['Accelerate', 'ARKit', 'Core Animation', 'Core Graphics', 'Core Image', 'GameplayKit', 'GLKit', 'Metal', 'MetalFX', 'MetalKit', 'MetalPerformanceShaders', 'MetalPerformanceShadersGraph', 'Model I/O', 'RealityKit', 'RoomPlan', 'SceneKit', 'SpriteKit', 'Vision', 'VisionKit'],
+            'ui': ['AppKit', 'Pencil Kit', 'PDFKit', 'SwiftUI', 'UIKit', 'WidgetKit', 'WatchKit', 'TVUIKit', 'CarPlay'],
+            'media': ['AVFAudio', 'AVFoundation', 'AVKit', 'AVRouting', 'Audio Toolbox', 'Audio Unit', 'Cinematic', 'Core Audio', 'Core Audio Types', 'Core MIDI', 'Core Video', 'CoreAudioKit', 'HTTPLiveStreaming', 'MediaPlayer', 'PhotoKit', 'Photos', 'ScreenCaptureKit', 'ShazamKit', 'SoundAnalysis', 'VideoToolbox'],
+            'ml': ['Core ML', 'Create ML', 'Create ML Components', 'Natural Language', 'Sound Analysis', 'Speech', 'Translation', 'Vision', 'VisionKit', 'Foundation Models'],
+            'network': ['CFNetwork', 'Combine', 'Core Telephony', 'Multipeer Connectivity', 'Network', 'NetworkExtension'],
+            'data': ['CloudKit', 'Core Data', 'Core Spotlight', 'FileProvider', 'Foundation', 'Swift', 'UniformTypeIdentifiers'],
+            'system': ['BackgroundTasks', 'CallKit', 'Contacts', 'Core Location', 'Core Motion', 'Core Services', 'Dispatch', 'EventKit', 'HealthKit', 'HomeKit', 'Intents', 'LocalAuthentication', 'NotificationCenter', 'PassKit', 'Security', 'SensorKit', 'StoreKit', 'UserNotifications', 'WeatherKit'],
+            'developer': ['DeveloperToolsSupport', 'OSLog', 'PlaygroundSupport', 'Swift Playgrounds', 'Xcode', 'XCTest']
+        };
+
+        // Add category data attributes to framework rows for filtering
+        function addCategoryBadges() {
+            const rows = document.querySelectorAll('.frameworks tbody tr');
+            rows.forEach(row => {
+                const firstCell = row.querySelector('td:first-child');
+                if (!firstCell) return;
+
+                const frameworkName = firstCell.textContent.trim().replace(/ Beta| Deprecated/g, '');
+                let category = 'other';
+
+                for (const [cat, frameworks] of Object.entries(frameworkCategories)) {
+                    if (frameworks.some(fw => frameworkName.includes(fw) || fw.includes(frameworkName))) {
+                        category = cat;
+                        break;
+                    }
+                }
+
+                // Add data attribute for filtering (no visual badge)
+                row.setAttribute('data-category', category);
+            });
+        }
+
         function removeOptions(selectElement) {
             var i, L = selectElement.options.length - 1;
             for (i = L; i >= 0; i--) {
@@ -3516,11 +3569,39 @@
             var frm = document.forms[0];
             var slcCols = frm.slcColumns;
             tf.clearFilters();
+
+            // Category filtering
+            if (slcCols.value.startsWith('category-')) {
+                const category = slcCols.value.replace('category-', '');
+                const rows = document.querySelectorAll('.frameworks tbody tr');
+                rows.forEach(row => {
+                    const rowCategory = row.getAttribute('data-category');
+                    if (rowCategory === category) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+                if (evt) {
+                    evt.preventDefault();
+                }
+                return; // Skip TableFilter for category filtering
+            } else {
+                // Show all rows when not filtering by category
+                const rows = document.querySelectorAll('.frameworks tbody tr');
+                rows.forEach(row => {
+                    row.style.display = '';
+                });
+            }
+
             if (slcCols.value === "all") {
                 tf.clearFilters();
             }
             if (slcCols.value === "beta") {
                 tf.setFilterValue(0, 'Beta');
+            }
+            if (slcCols.value === "deprecated") {
+                tf.setFilterValue(0, 'Deprecated');
             }
             if (slcCols.value === "ios") {
                 tf.setFilterValue(1, '[nonempty]');
@@ -3548,10 +3629,18 @@
             if (slcCols.value === "visionOS") {
                 tf.setFilterValue(5, '[nonempty]');
             }
+            if (slcCols.value === "macCatalyst") {
+                tf.setFilterValue(6, '[nonempty]');
+            }
+            if (slcCols.value === "ipados") {
+                tf.setFilterValue(7, '[nonempty]');
+            }
 
             tf.filter();
 
-            evt.preventDefault();
+            if (evt) {
+                evt.preventDefault();
+            }
         }
 
         var filtersConfig = {
@@ -3569,6 +3658,7 @@
                 'string', 'string', 'string'
             ],
             on_filters_loaded: function (o) {
+                addCategoryBadges(); // Add category badges after table loads
                 tf.filter();
             }
         };
@@ -3582,6 +3672,140 @@
         .TF.sticky th {
             top: 0px !important;
             /* important for Safari */
+            text-align: left !important;
+            background-color: #363636 !important;
+            color: white !important;
+        }
+
+        /** Mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 1rem !important;
+            }
+
+            /* Make table horizontally scrollable on mobile */
+            .table-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin: 0 -1rem;
+                padding: 0 1rem;
+            }
+
+            /* Ensure table doesn't collapse */
+            .frameworks {
+                min-width: 800px;
+            }
+
+            /* Larger touch targets for mobile */
+            .frameworks th,
+            .frameworks td {
+                padding: 0.75rem !important;
+                font-size: 0.875rem;
+            }
+
+            /* Stack form controls vertically on mobile */
+            .field.has-addons {
+                flex-direction: column;
+            }
+
+            .field.has-addons .control {
+                width: 100%;
+            }
+
+            .field.has-addons .control .select,
+            .field.has-addons .control .button {
+                width: 100%;
+            }
+
+            .field.has-addons .control .select select {
+                width: 100%;
+            }
+
+            /* Better button spacing on mobile */
+            .field.has-addons .control:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        /** Visual badges for platform availability */
+        .frameworks tbody td:not(:first-child) {
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Available platforms - green background */
+        .frameworks tbody td:not(:first-child):not(:empty) {
+            background-color: #d4edda;
+            color: #155724;
+            border-left: 3px solid #28a745;
+        }
+
+        /* Unavailable platforms - red/pink background */
+        .frameworks tbody td:empty {
+            background-color: #f8d7da;
+            border-left: 3px solid #dc3545;
+        }
+
+        /* Framework name column styling */
+        .frameworks tbody td:first-child {
+            font-weight: 600;
+        }
+
+        /* Beta and Deprecated tags - keep existing styles but improve visibility */
+        .tag.is-info {
+            background-color: #3298dc;
+            color: white;
+            font-weight: 600;
+        }
+
+        .tag.is-warning {
+            background-color: #ffdd57;
+            color: rgba(0, 0, 0, 0.7);
+            font-weight: 600;
+        }
+
+        /* Hover effect for table rows */
+        .frameworks tbody tr:hover {
+            background-color: #f0f9ff;
+        }
+
+        .frameworks tbody tr:hover td:not(:empty) {
+            background-color: #c3e6cb;
+        }
+
+        /* Improve quick search styling */
+        #quickSearch {
+            font-size: 1.1rem;
+            border: 2px solid #3298dc;
+        }
+
+        #quickSearch:focus {
+            border-color: #2366d1;
+            box-shadow: 0 0 0 0.125em rgba(50, 152, 220, 0.25);
+        }
+
+        /* Header styling improvements */
+        #quickSearch {
+            font-size: 1.1rem;
+            border: 2px solid #3298dc;
+        }
+
+        #quickSearch:focus {
+            border-color: #2366d1;
+            box-shadow: 0 0 0 0.125em rgba(50, 152, 220, 0.25);
+        }
+
+        /* Header styling improvements */
+        .frameworks thead th {
+            background-color: #363636;
+            color: white;
+            font-weight: 700;
+            text-align: center !important;
+            padding: 1rem !important;
+            border: 1px solid #4a4a4a;
+        }
+
+        .frameworks thead th:first-child {
             text-align: left !important;
         }
     </style>
