@@ -8,10 +8,10 @@ This is a static website that displays a comprehensive, filterable table of all 
 
 ## Architecture
 
-**Single-file application**: The entire website is contained in `index.html` (~3600 lines), which includes:
-- HTML markup with embedded framework data (284 table rows of framework entries)
+**Single-file application**: The entire website is contained in `index.html`, which includes:
+- HTML markup with embedded framework data (table rows of framework entries)
 - Inline JavaScript at the bottom for filtering logic and TableFilter configuration
-- Inline CSS for styling overrides
+- Inline CSS for styling overrides (including dark mode support)
 - External dependencies loaded from `node_modules/` (Bulma CSS, TableFilter JS)
 
 **Core dependencies**:
@@ -25,17 +25,30 @@ This is a static website that displays a comprehensive, filterable table of all 
 
 ## Key Functionality
 
-**Filtering system** (lines 3515-3555):
+**Dark mode support**:
+- Toggle button in the header switches between light and dark themes
+- Automatically detects system preference on initial load
+- Theme preference persisted to `localStorage`
+- Custom CSS variables for all color values support seamless theme switching
+- Dark mode styles include optimized colors for background, text, table borders, and hover states
+
+**Filtering system**:
 - `filter()` function maps dropdown selections to TableFilter API calls
 - Uses TableFilter operators like `[nonempty]`, `[empty]`, and `>= N` to filter by platform
-- Custom filter presets: "all", "beta", "ios", "ios13+", "ios-not-watch", "mac", "mac-not-ios", "watchos", "tvos", "visionOS"
-- TableFilter instance (`tf`) initialized with config at lines 3557-3577
+- Three types of filters organized in dropdown optgroups:
+  - **By Status**: "all", "beta", "deprecated"
+  - **By Platform**: "ios", "ios13+", "ios-not-watch", "mac", "mac-not-ios", "watchos", "tvos", "visionOS", "macCatalyst", "ipados"
+  - **By Category**: "graphics", "ui", "media", "ml", "network", "data", "system", "developer"
+- Platform filters use TableFilter's built-in filtering
+- Category filters use custom logic with `data-category` attributes and direct DOM manipulation
+- Framework category mapping defined in `frameworkCategories` object
 
-**TableFilter configuration** (lines 3557-3574):
+**TableFilter configuration**:
 - `base_path` points to CDN for TableFilter assets
 - `sticky_headers: true` keeps headers visible while scrolling
 - `auto_filter` with 500ms delay for responsive text-box filtering
 - `rows_counter` and `status_bar` enabled for user feedback
+- `on_filters_loaded` callback runs `addCategoryBadges()` to add category data attributes to table rows
 
 ## Development Commands
 
@@ -54,7 +67,7 @@ This uses `gh-pages` package to deploy the current directory to the `gh-pages` b
 
 ## Updating Framework Data
 
-Framework data is embedded directly in the HTML table (lines 86-3498). The `<tbody>` HTML is generated using the Swift CLI tooling in `../appleframeworks-cli`.
+Framework data is embedded directly in the HTML `<tbody>` element within the `index.html` file. The table body HTML is generated using the Swift CLI tooling in `../appleframeworks-cli`.
 
 ### Using the Generation Tooling
 
@@ -74,7 +87,7 @@ The `appleframeworks-cli` repository contains a Swift program that:
 1. Navigate to `../appleframeworks-cli`
 2. Run the Swift CLI program (builds and executes via Xcode) or use the macOS app
 3. The generated `<tbody>` HTML is copied to clipboard
-4. Replace the existing `<tbody>` section in `index.html` (lines 86-3498) with the clipboard content
+4. Replace the existing `<tbody>` section in `index.html` with the clipboard content
 
 **Note**: As of June 2026, both the CLI and App dynamically fetch all frameworks from Apple's API, eliminating the need to manually update framework lists. The tools are now always up-to-date with new framework releases.
 
@@ -87,6 +100,17 @@ If editing manually, each `<tr>` follows this structure:
 - Beta frameworks get `<span class="tag is-info"> Beta</span>` tags
 - Deprecated frameworks get `<span class="tag is-warning is-light"> Deprecated</span>` tags
 - Version format: "X.Y" (e.g., "13.0", "10.15")
+
+## Development Workflow
+
+**Before committing/pushing changes**:
+- Always review and update this `CLAUDE.md` file if:
+  - New features or functionality have been added
+  - Architecture or dependencies have changed
+  - Development commands or workflows have been modified
+  - Key functionality has been altered or extended
+- Keep the documentation current so future work builds on accurate context
+- Remove outdated information and avoid referencing specific line numbers (they become stale quickly)
 
 ## Project Constraints
 
