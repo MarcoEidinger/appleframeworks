@@ -41,7 +41,19 @@
 <body>
     <script src="node_modules/tablefilter/dist/tablefilter/tablefilter.js"></script>
     <div class="container content p-4">
-        <h1 class="title pt-4">Public Apple Frameworks</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h1 class="title pt-4">Public Apple Frameworks</h1>
+            <button id="theme-toggle" class="button is-light" style="margin-top: 1rem;" aria-label="Toggle dark mode">
+                <span class="icon">
+                    <svg id="theme-icon-light" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" style="display: none;">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+                    </svg>
+                    <svg id="theme-icon-dark" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                    </svg>
+                </span>
+            </button>
+        </div>
         <p>View all public frameworks provided by Apple and check their platform availability. Use the built-in filters
             or perform advanced searches from text-box filters with these <a
                 href="https://github.com/koalyptus/TableFilter/wiki/4.-Filter-operators" target="_blank">operators</a>.
@@ -3668,13 +3680,236 @@
     </script>
 
     <style>
+        /* Dark mode CSS variables */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #4a4a4a;
+            --container-bg: #ffffff;
+            --table-border: #dbdbdb;
+            --table-header-bg: #363636;
+            --table-header-color: white;
+            --available-bg: #d4edda;
+            --available-color: #155724;
+            --available-border: #28a745;
+            --unavailable-bg: #f8d7da;
+            --unavailable-border: #dc3545;
+            --hover-bg: #f0f9ff;
+            --hover-cell-bg: #c3e6cb;
+            --link-color: #3273dc;
+            --input-border: #dbdbdb;
+            --input-bg: #ffffff;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1e1e1e;
+            --text-color: #e8e8e8;
+            --container-bg: #1e1e1e;
+            --table-border: #3a3a3a;
+            --table-header-bg: #2d2d2d;
+            --table-header-color: #ffffff;
+            --available-bg: #1b4d1b;
+            --available-color: #a5d6a7;
+            --available-border: #4caf50;
+            --unavailable-bg: #4d1b1b;
+            --unavailable-border: #ef5350;
+            --hover-bg: #2a2a2a;
+            --hover-cell-bg: #2a5a2a;
+            --link-color: #64b5f6;
+            --input-border: #4a4a4a;
+            --input-bg: #2a2a2a;
+        }
+
+        /* Apply dark mode colors */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            background-color: var(--container-bg);
+        }
+
+        .title, .content {
+            color: var(--text-color);
+        }
+
+        /* Brighter title in dark mode */
+        [data-theme="dark"] .title {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        a {
+            color: var(--link-color);
+        }
+
+        .frameworks {
+            border-color: var(--table-border);
+        }
+
+        .frameworks th,
+        .frameworks td {
+            border-color: var(--table-border);
+        }
+
+        /* Input fields in dark mode */
+        [data-theme="dark"] input[type="text"],
+        [data-theme="dark"] select {
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            border-color: var(--input-border);
+        }
+
+        [data-theme="dark"] .select select {
+            background-color: var(--input-bg);
+            color: var(--text-color);
+        }
+
+        [data-theme="dark"] .button.is-link.is-light {
+            background-color: #2563eb;
+            color: #ffffff;
+            border-color: #1e40af;
+        }
+
+        [data-theme="dark"] .button.is-link.is-light:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* TableFilter-specific dark mode styling */
+        [data-theme="dark"] .flt,
+        [data-theme="dark"] .flt_s {
+            background-color: var(--input-bg) !important;
+            color: var(--text-color) !important;
+            border-color: var(--input-border) !important;
+        }
+
+        [data-theme="dark"] .inf {
+            background-color: var(--container-bg) !important;
+            color: var(--text-color) !important;
+        }
+
+        [data-theme="dark"] .tot,
+        [data-theme="dark"] .status {
+            background-color: transparent !important;
+            color: var(--text-color) !important;
+        }
+
+        /* Improve table row borders in dark mode */
+        [data-theme="dark"] .frameworks tbody tr {
+            border-bottom: 1px solid var(--table-border);
+        }
+
+        /* Better text contrast in cells */
+        [data-theme="dark"] .frameworks tbody td:first-child {
+            background-color: #252525;
+            color: #64b5f6;
+            font-weight: 600;
+        }
+
+        [data-theme="dark"] .frameworks tbody td:first-child a {
+            color: #64b5f6;
+        }
+
+        [data-theme="dark"] .frameworks tbody td:first-child a:hover {
+            color: #90caf9;
+        }
+
+        /* Keep dark background on hover for framework column */
+        [data-theme="dark"] .frameworks tbody tr:hover td:first-child {
+            background-color: #2f2f2f;
+        }
+
+        /* Theme toggle button styling */
+        #theme-toggle {
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+            min-width: 2.5rem;
+            height: 2.5rem;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #theme-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        [data-theme="dark"] #theme-toggle {
+            background-color: #2a2a2a;
+            border-color: #4a4a4a;
+            color: #ffffff;
+        }
+
+        [data-theme="dark"] #theme-toggle:hover {
+            background-color: #353535;
+            border-color: #5a5a5a;
+        }
+
+        /* Better styling for text inputs in table filters */
+        [data-theme="dark"] .flt::placeholder {
+            color: #888888;
+        }
+
+        /* Improve "Rows:" counter visibility in dark mode */
+        [data-theme="dark"] .tot,
+        [data-theme="dark"] .inf div {
+            color: #b0b0b0 !important;
+        }
+
+        /* Better select dropdown styling in dark mode */
+        [data-theme="dark"] .select select option {
+            background-color: var(--input-bg);
+            color: var(--text-color);
+        }
+
+        /* Improve overall table readability in dark mode */
+        [data-theme="dark"] .frameworks {
+            background-color: var(--container-bg);
+        }
+
+        [data-theme="dark"] .frameworks tbody td {
+            color: #d0d0d0;
+        }
+
+        /* Footer styling - white background and no border in light mode */
+        .footer {
+            background-color: #ffffff;
+            border-top: none;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        /* Footer styling for dark mode */
+        [data-theme="dark"] .footer {
+            background-color: var(--container-bg);
+            border-top: none;
+        }
+
+        [data-theme="dark"] .footer .content {
+            color: var(--text-color);
+        }
+
+        [data-theme="dark"] .footer p {
+            color: #b0b0b0;
+        }
+
+        [data-theme="dark"] .footer a {
+            color: var(--link-color);
+        }
+
+        [data-theme="dark"] .footer a:hover {
+            color: #90caf9;
+        }
+
         /** sticky table header */
         .TF.sticky th {
             top: 0px !important;
             /* important for Safari */
             text-align: left !important;
-            background-color: #363636 !important;
-            color: white !important;
+            background-color: var(--table-header-bg) !important;
+            color: var(--table-header-color) !important;
         }
 
         /** Mobile responsiveness */
@@ -3735,15 +3970,15 @@
 
         /* Available platforms - green background */
         .frameworks tbody td:not(:first-child):not(:empty) {
-            background-color: #d4edda;
-            color: #155724;
-            border-left: 3px solid #28a745;
+            background-color: var(--available-bg);
+            color: var(--available-color);
+            border-left: 3px solid var(--available-border);
         }
 
         /* Unavailable platforms - red/pink background */
         .frameworks tbody td:empty {
-            background-color: #f8d7da;
-            border-left: 3px solid #dc3545;
+            background-color: var(--unavailable-bg);
+            border-left: 3px solid var(--unavailable-border);
         }
 
         /* Framework name column styling */
@@ -3764,13 +3999,31 @@
             font-weight: 600;
         }
 
-        /* Hover effect for table rows */
-        .frameworks tbody tr:hover {
-            background-color: #f0f9ff;
+        /* Dark mode tag improvements */
+        [data-theme="dark"] .tag.is-info {
+            background-color: #1e88e5;
+            color: #ffffff;
         }
 
-        .frameworks tbody tr:hover td:not(:empty) {
-            background-color: #c3e6cb;
+        [data-theme="dark"] .tag.is-warning.is-light {
+            background-color: #f9a825;
+            color: #1e1e1e;
+            font-weight: 700;
+        }
+
+        /* Hover effect for table rows */
+        .frameworks tbody tr:hover {
+            background-color: var(--hover-bg);
+        }
+
+        /* Hover only affects platform cells (not framework name column) */
+        .frameworks tbody tr:hover td:not(:first-child):not(:empty) {
+            background-color: var(--hover-cell-bg);
+        }
+
+        /* Keep framework column background unchanged on hover in light mode */
+        .frameworks tbody tr:hover td:first-child {
+            background-color: inherit;
         }
 
         /* Improve quick search styling */
@@ -3797,18 +4050,72 @@
 
         /* Header styling improvements */
         .frameworks thead th {
-            background-color: #363636;
-            color: white;
+            background-color: var(--table-header-bg);
+            color: var(--table-header-color);
             font-weight: 700;
             text-align: center !important;
             padding: 1rem !important;
-            border: 1px solid #4a4a4a;
+            border: 1px solid var(--table-border);
         }
 
         .frameworks thead th:first-child {
             text-align: left !important;
         }
     </style>
+
+    <script>
+        // Dark mode toggle functionality
+        (function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const lightIcon = document.getElementById('theme-icon-light');
+            const darkIcon = document.getElementById('theme-icon-dark');
+            const html = document.documentElement;
+
+            // Check for saved theme preference or default to system preference
+            function getPreferredTheme() {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme) {
+                    return savedTheme;
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            // Set theme and update icons
+            function setTheme(theme) {
+                html.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+
+                if (theme === 'dark') {
+                    lightIcon.style.display = 'block';
+                    darkIcon.style.display = 'none';
+                } else {
+                    lightIcon.style.display = 'none';
+                    darkIcon.style.display = 'block';
+                }
+            }
+
+            // Toggle theme
+            function toggleTheme() {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                setTheme(newTheme);
+            }
+
+            // Initialize theme on page load
+            setTheme(getPreferredTheme());
+
+            // Add click event listener
+            themeToggle.addEventListener('click', toggleTheme);
+
+            // Listen for system theme changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                // Only update if user hasn't manually set a preference
+                if (!localStorage.getItem('theme')) {
+                    setTheme(e.matches ? 'dark' : 'light');
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>
