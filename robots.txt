@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://marcoeidinger.github.io/appleframeworks/sitemap.xml
